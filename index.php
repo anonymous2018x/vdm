@@ -386,22 +386,21 @@ signInFailure: function(error) {
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <div class="footer-box">
-                            <div class="box-icon">
-                                <span class="fa fa-phone h3"></span>
-                            </div>
-                            <p>+254771019469 </p>
+                            <a  href="#" class="box-icon">
+                              <i class="fab fa-twitter h3"></i>
+                                Twitter
+                            </a>
                         </div>
                         <div class="space-30 hidden visible-xs"></div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <div class="footer-box">
-                            <div class="box-icon">
-                                <span class="fa fa-envelope h3"></span>
-                            </div>
-                            <p>
-                              reducepovertyclub@gmail.com
-                            </p>
+                            <a  href="#" class="box-icon">
+                              <i class="fab fa-youtube h3"></i>
+                                Youtube
+                            </a>
                         </div>
+                        <div class="space-30 hidden visible-xs"></div>
                     </div>
                 </div>
             </div>
