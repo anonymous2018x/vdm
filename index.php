@@ -373,6 +373,37 @@ signInFailure: function(error) {
                         </div>
                     </div>
                 </div>
+                <!-- social media -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <a  href="#" class="box-icon">
+                                <i class="fab fa-facebook-f h3"></i>
+                                Facebook
+                            </a>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="fa fa-phone h3"></span>
+                            </div>
+                            <p>+254771019469 </p>
+                        </div>
+                        <div class="space-30 hidden visible-xs"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="footer-box">
+                            <div class="box-icon">
+                                <span class="fa fa-envelope h3"></span>
+                            </div>
+                            <p>
+                              reducepovertyclub@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Footer-Bootom -->
