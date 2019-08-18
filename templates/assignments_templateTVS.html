@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the  and  formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the assignments_init() hook (in hooks/assignments.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="assignments-date-<%%VALUE(id)%%>" class="assignments-date"><%%VALUE(date)%%></td>
+		<td id="assignments-time_start-<%%VALUE(id)%%>" class="assignments-time_start"><%%VALUE(time_start)%%></td>
+		<td id="assignments-time_end-<%%VALUE(id)%%>" class="assignments-time_end"><%%VALUE(time_end)%%></td>
+		<td id="assignments-unit_code-<%%VALUE(id)%%>" class="assignments-unit_code"><%%VALUE(unit_code)%%></td>
+		<td id="assignments-venue-<%%VALUE(id)%%>" class="assignments-venue"><%%VALUE(venue)%%></td>
+		<td id="assignments-manager-<%%VALUE(id)%%>" class="assignments-manager"><%%VALUE(manager)%%></td>
+		<td id="assignments-project-<%%VALUE(id)%%>" class="assignments-project"><%%VALUE(project)%%></td>
+		<td id="assignments-worker-<%%VALUE(id)%%>" class="assignments-worker"><%%VALUE(worker)%%></td>

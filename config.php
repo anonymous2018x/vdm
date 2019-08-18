@@ -1,0 +1,36 @@
+<?php
+	$dbServer = '94.130.51.39';
+	$dbUsername = 'reducepo_Admin';
+	$dbPassword = 'DennoBrown450';
+	$dbDatabase = 'reducepo_vdm';
+
+	$adminConfig = array(
+		'adminUsername' => "denno",
+		'adminPassword' => "6cec030d714c036948832f768300a602",
+		'notifyAdminNewMembers' => "",
+		'defaultSignUp' => "1",
+		'anonymousGroup' => "anonymous",
+		'anonymousMember' => "guest",
+		'groupsPerPage' => "10",
+		'membersPerPage' => "10",
+		'recordsPerPage' => "10",
+		'custom1' => "Full Name",
+		'custom2' => "County",
+		'custom3' => "Location",
+		'custom4' => "Village",
+		'MySQLDateFormat' => "%m/%d/%Y",
+		'PHPDateFormat' => "n/j/Y",
+		'PHPDateTimeFormat' => "m/d/Y, h:i a",
+		'senderName' => "Membership management",
+		'senderEmail' => "poasanabrown@gmail.com",
+		'approvalSubject' => "Your membership is now approved",
+		'approvalMessage' => "Dear member,\n\nYour membership is now approved by the admin. You can log in to your account here:\nhttp://reducepovertyclub.com\n\nRegards,\nAdmin",
+		'hide_twitter_feed' => "true",
+		'maintenance_mode_message' => "<b>Our website is currently down for maintenance</b><br>\r\nWe expect to be back in a couple hours. Thanks for your patience.",
+		'mail_function' => "mail",
+		'smtp_server' => "",
+		'smtp_encryption' => "",
+		'smtp_port' => "25",
+		'smtp_user' => "",
+		'smtp_pass' => ""
+	);
