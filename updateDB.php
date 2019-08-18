@@ -11,14 +11,14 @@
 		}
 
 		// set up tables
-		setupTable('managers', "create table if not exists `managers` (   `id` INT unsigned not null auto_increment , primary key (`id`), `name` VARCHAR(40) not null ) CHARSET utf8", $silent);
-		setupTable('projects', "create table if not exists `projects` (   `id` INT unsigned not null auto_increment , primary key (`id`), `name` VARCHAR(40) not null , `manager` INT unsigned not null ) CHARSET utf8", $silent);
-		setupIndexes('projects', array('manager'));
-		setupTable('assignments', "create table if not exists `assignments` (   `id` INT unsigned not null auto_increment , primary key (`id`), `date` DATE not null , `time_start` TIME not null , `time_end` TIME not null , `unit_code` VARCHAR(40) not null , `venue` VARCHAR(40) not null , `manager` INT unsigned not null , `project` INT unsigned not null , `worker` VARCHAR(40) not null ) CHARSET utf8", $silent);
+		setupTable('industries', "create table if not exists `industries` (   `id` INT unsigned not null auto_increment , primary key (`id`), `name` VARCHAR(40) not null ) CHARSET utf8", $silent);
+		setupTable('categories', "create table if not exists `categories` (   `id` INT unsigned not null auto_increment , primary key (`id`), `name` VARCHAR(40) not null , `manager` INT unsigned not null ) CHARSET utf8", $silent);
+		setupIndexes('categories', array('manager'));
+		setupTable('assignments', "create table if not exists `assignments` (   `id` INT unsigned not null auto_increment , primary key (`id`), `date` DATE not null , `time_start` TIME not null , `time_end` TIME not null , `unit_code` VARCHAR(40) not null , `venue` VARCHAR(40) not null , `manager` INT unsigned not null , `project` INT unsigned not null , `proposal` VARCHAR(40) not null ) CHARSET utf8", $silent);
 		setupIndexes('assignments', array('manager','project'));
 		setupTable('personal_time_table', "create table if not exists `personal_time_table` (   `id` INT unsigned not null auto_increment , primary key (`id`), `day` VARCHAR(40) not null , `time_start` TIME not null , `time_end` TIME not null , `activity` VARCHAR(40) not null ) CHARSET utf8", $silent);
-		setupTable('notices', "create table if not exists `notices` (   `id` INT unsigned not null auto_increment , primary key (`id`), `notice` TEXT not null , `manager` INT unsigned not null , `project` INT unsigned not null , `worker` VARCHAR(40) not null , `date` DATE ) CHARSET utf8", $silent);
-		setupIndexes('notices', array('manager','project'));
+		setupTable('proposals', "create table if not exists `proposals` (   `id` INT unsigned not null auto_increment , primary key (`id`), `notice` TEXT not null , `manager` INT unsigned not null , `project` INT unsigned not null , `proposal` VARCHAR(40) not null , `date` DATE ) CHARSET utf8", $silent);
+		setupIndexes('proposals', array('manager','project'));
 
 
 		// save MD5

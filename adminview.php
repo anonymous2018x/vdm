@@ -6,9 +6,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-building"></i>
               </div>
-              <div class="mr-5"><?php datacounter("managers"); ?> Managers</div>
+              <div class="mr-5"><?php datacounter("industries"); ?> Industries</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="managers_view.php">
+            <a class="card-footer text-white clearfix small z-1" href="industries_view.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -22,9 +22,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-pie-chart"></i>
               </div>
-              <div class="mr-5"><?php datacounter("projects"); ?> Projects</div>
+              <div class="mr-5"><?php datacounter("categories"); ?> Categories</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="projects_view.php">
+            <a class="card-footer text-white clearfix small z-1" href="categories_view.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
@@ -59,9 +59,9 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-whatsapp"></i>
               </div>
-              <div class="mr-5"><?php datacounter("notices"); ?> Notices</div>
+              <div class="mr-5"><?php datacounter("proposals"); ?> Proposals</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="notices_view.php">
+            <a class="card-footer text-white clearfix small z-1" href="proposals_view.php">
               <span class="float-left">View Details</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>

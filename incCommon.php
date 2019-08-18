@@ -45,10 +45,10 @@
 		$arrAccessTables = array();
 		$arrTables = array(
 			/* 'table_name' => ['table caption', 'homepage description', 'icon', 'table group name'] */   
-			'managers' => array('Managers', '', 'resources/table_icons/building.png', 'None'),
-			'projects' => array('Projects', '', 'resources/table_icons/chart_organisation.png', 'None'),
+			'industries' => array('Industries', '', 'resources/table_icons/building.png', 'None'),
+			'categories' => array('Categories', '', 'resources/table_icons/chart_organisation.png', 'None'),
 			'assignments' => array('Assignments', '', 'resources/table_icons/books.png', 'None'),
-			'notices' => array('Notices', '', 'resources/table_icons/clipboard_empty.png', 'None')
+			'proposals' => array('Proposals', '', 'resources/table_icons/clipboard_empty.png', 'None')
 		);
 		if($skip_authentication || getLoggedAdmin()) return $arrTables;
 
@@ -135,13 +135,13 @@
 
 	function get_sql_fields($table_name){
 		$sql_fields = array(   
-			'managers' => "`managers`.`id` as 'id', `managers`.`name` as 'name'",
-			'projects' => "`projects`.`id` as 'id', `projects`.`name` as 'name', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager'",
-			'class_time_table' => "`class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `class_time_table`.`worker` as 'worker'",
-			'assignments' => "`assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `assignments`.`worker` as 'worker'",
+			'industries' => "`industries`.`id` as 'id', `industries`.`name` as 'name'",
+			'categories' => "`categories`.`id` as 'id', `categories`.`name` as 'name', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager'",
+			'class_time_table' => "`class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `class_time_table`.`proposal` as 'proposal'",
+			'assignments' => "`assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `assignments`.`proposal` as 'proposal'",
 			'personal_time_table' => "`personal_time_table`.`id` as 'id', `personal_time_table`.`day` as 'day', TIME_FORMAT(`personal_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`personal_time_table`.`time_end`, '%r') as 'time_end', `personal_time_table`.`activity` as 'activity'",
-			'student_details' => "`student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `student_details`.`worker` as 'worker', `student_details`.`reg_no` as 'reg_no'",
-			'notices' => "`notices`.`id` as 'id', `notices`.`notice` as 'notice', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `notices`.`worker` as 'worker', if(`notices`.`date`,date_format(`notices`.`date`,'%m/%d/%Y'),'') as 'date'"
+			'student_details' => "`student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `student_details`.`proposal` as 'proposal', `student_details`.`reg_no` as 'reg_no'",
+			'proposals' => "`proposals`.`id` as 'id', `proposals`.`notice` as 'notice', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `proposals`.`proposal` as 'proposal', if(`proposals`.`date`,date_format(`proposals`.`date`,'%m/%d/%Y'),'') as 'date'"
 		);
 
 		if(isset($sql_fields[$table_name])){
@@ -155,23 +155,23 @@
 
 	function get_sql_from($table_name, $skip_permissions = false){
 		$sql_from = array(   
-			'managers' => "`managers` ",
-			'projects' => "`projects` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`projects`.`manager` ",
-			'class_time_table' => "`class_time_table` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`class_time_table`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`class_time_table`.`project` ",
-			'assignments' => "`assignments` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`assignments`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`assignments`.`project` ",
+			'industries' => "`industries` ",
+			'categories' => "`categories` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`categories`.`manager` ",
+			'class_time_table' => "`class_time_table` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`class_time_table`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`class_time_table`.`project` ",
+			'assignments' => "`assignments` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`assignments`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`assignments`.`project` ",
 			'personal_time_table' => "`personal_time_table` ",
-			'student_details' => "`student_details` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`student_details`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`student_details`.`project` ",
-			'notices' => "`notices` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`notices`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`notices`.`project` "
+			'student_details' => "`student_details` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`student_details`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`student_details`.`project` ",
+			'proposals' => "`proposals` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`proposals`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`proposals`.`project` "
 		);
 
 		$pkey = array(   
-			'managers' => 'id',
-			'projects' => 'id',
+			'industries' => 'id',
+			'categories' => 'id',
 			'class_time_table' => 'id',
 			'assignments' => 'id',
 			'personal_time_table' => 'id',
 			'student_details' => 'id',
-			'notices' => 'id'
+			'proposals' => 'id'
 		);
 
 		if(isset($sql_from[$table_name])){
@@ -219,11 +219,11 @@
 	function get_defaults($table){
 		/* array of tables and their fields, with default values (or empty), excluding automatic values */
 		$defaults = array(
-			'managers' => array(
+			'industries' => array(
 				'id' => '',
 				'name' => ''
 			),
-			'projects' => array(
+			'categories' => array(
 				'id' => '',
 				'name' => '',
 				'manager' => ''
@@ -237,7 +237,7 @@
 				'venue' => '',
 				'manager' => '',
 				'project' => '',
-				'worker' => ''
+				'proposal' => ''
 			),
 			'assignments' => array(
 				'id' => '',
@@ -248,7 +248,7 @@
 				'venue' => '',
 				'manager' => '',
 				'project' => '',
-				'worker' => ''
+				'proposal' => ''
 			),
 			'personal_time_table' => array(
 				'id' => '',
@@ -262,15 +262,15 @@
 				'full_name' => '',
 				'manager' => '',
 				'project' => '',
-				'worker' => '',
+				'proposal' => '',
 				'reg_no' => ''
 			),
-			'notices' => array(
+			'proposals' => array(
 				'id' => '',
 				'notice' => '',
 				'manager' => '',
 				'project' => '',
-				'worker' => '',
+				'proposal' => '',
 				'date' => ''
 			)
 		);

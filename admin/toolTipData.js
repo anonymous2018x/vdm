@@ -11,41 +11,41 @@ visitorSignup0Tip=["", spacer+"If this option is selected, visitors will not be 
 visitorSignup1Tip=["", spacer+"If this option is selected, visitors can join this group but will not be able to sign in unless the admin approves them from the admin area."];
 visitorSignup2Tip=["", spacer+"If this option is selected, visitors can join this group and will be able to sign in instantly with no need for admin approval."];
 
-// managers table
-managers_addTip=["",spacer+"This option allows all members of the group to add records to the 'Managers' table. A member who adds a record to the table becomes the 'owner' of that record."];
+// industries table
+industries_addTip=["",spacer+"This option allows all members of the group to add records to the 'Industries' table. A member who adds a record to the table becomes the 'owner' of that record."];
 
-managers_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Managers' table."];
-managers_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Managers' table."];
-managers_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Managers' table."];
-managers_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Managers' table."];
+industries_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Industries' table."];
+industries_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Industries' table."];
+industries_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Industries' table."];
+industries_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Industries' table."];
 
-managers_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Managers' table."];
-managers_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Managers' table."];
-managers_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Managers' table."];
-managers_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Managers' table, regardless of their owner."];
+industries_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Industries' table."];
+industries_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Industries' table."];
+industries_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Industries' table."];
+industries_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Industries' table, regardless of their owner."];
 
-managers_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Managers' table."];
-managers_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Managers' table."];
-managers_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Managers' table."];
-managers_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Managers' table."];
+industries_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Industries' table."];
+industries_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Industries' table."];
+industries_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Industries' table."];
+industries_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Industries' table."];
 
-// projects table
-projects_addTip=["",spacer+"This option allows all members of the group to add records to the 'Projects' table. A member who adds a record to the table becomes the 'owner' of that record."];
+// categories table
+categories_addTip=["",spacer+"This option allows all members of the group to add records to the 'Categories' table. A member who adds a record to the table becomes the 'owner' of that record."];
 
-projects_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Projects' table."];
-projects_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Projects' table."];
-projects_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Projects' table."];
-projects_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Projects' table."];
+categories_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Categories' table."];
+categories_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Categories' table."];
+categories_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Categories' table."];
+categories_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Categories' table."];
 
-projects_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Projects' table."];
-projects_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Projects' table."];
-projects_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Projects' table."];
-projects_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Projects' table, regardless of their owner."];
+categories_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Categories' table."];
+categories_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Categories' table."];
+categories_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Categories' table."];
+categories_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Categories' table, regardless of their owner."];
 
-projects_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Projects' table."];
-projects_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Projects' table."];
-projects_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Projects' table."];
-projects_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Projects' table."];
+categories_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Categories' table."];
+categories_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Categories' table."];
+categories_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Categories' table."];
+categories_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Categories' table."];
 
 // class_time_table table
 class_time_table_addTip=["",spacer+"This option allows all members of the group to add records to the 'Class time table' table. A member who adds a record to the table becomes the 'owner' of that record."];
@@ -119,23 +119,23 @@ student_details_delete1Tip=["",spacer+"This option allows each member of the gro
 student_details_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Student details' table."];
 student_details_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Student details' table."];
 
-// notices table
-notices_addTip=["",spacer+"This option allows all members of the group to add records to the 'Notices' table. A member who adds a record to the table becomes the 'owner' of that record."];
+// proposals table
+proposals_addTip=["",spacer+"This option allows all members of the group to add records to the 'Proposals' table. A member who adds a record to the table becomes the 'owner' of that record."];
 
-notices_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Notices' table."];
-notices_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Notices' table."];
-notices_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Notices' table."];
-notices_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Notices' table."];
+proposals_view0Tip=["",spacer+"This option prohibits all members of the group from viewing any record in the 'Proposals' table."];
+proposals_view1Tip=["",spacer+"This option allows each member of the group to view only his own records in the 'Proposals' table."];
+proposals_view2Tip=["",spacer+"This option allows each member of the group to view any record owned by any member of the group in the 'Proposals' table."];
+proposals_view3Tip=["",spacer+"This option allows each member of the group to view all records in the 'Proposals' table."];
 
-notices_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Notices' table."];
-notices_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Notices' table."];
-notices_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Notices' table."];
-notices_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Notices' table, regardless of their owner."];
+proposals_edit0Tip=["",spacer+"This option prohibits all members of the group from modifying any record in the 'Proposals' table."];
+proposals_edit1Tip=["",spacer+"This option allows each member of the group to edit only his own records in the 'Proposals' table."];
+proposals_edit2Tip=["",spacer+"This option allows each member of the group to edit any record owned by any member of the group in the 'Proposals' table."];
+proposals_edit3Tip=["",spacer+"This option allows each member of the group to edit any records in the 'Proposals' table, regardless of their owner."];
 
-notices_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Notices' table."];
-notices_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Notices' table."];
-notices_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Notices' table."];
-notices_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Notices' table."];
+proposals_delete0Tip=["",spacer+"This option prohibits all members of the group from deleting any record in the 'Proposals' table."];
+proposals_delete1Tip=["",spacer+"This option allows each member of the group to delete only his own records in the 'Proposals' table."];
+proposals_delete2Tip=["",spacer+"This option allows each member of the group to delete any record owned by any member of the group in the 'Proposals' table."];
+proposals_delete3Tip=["",spacer+"This option allows each member of the group to delete any records in the 'Proposals' table."];
 
 /*
 	Style syntax:

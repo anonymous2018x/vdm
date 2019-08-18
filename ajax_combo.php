@@ -33,14 +33,14 @@
 
 	// drop-downs config
 	$lookups = array(   
-		'managers' => array(  
+		'industries' => array(  
 		),
-		'projects' => array(   
+		'categories' => array(   
 			'manager' => array(
-				'parent_table' => 'managers',
+				'parent_table' => 'industries',
 				'parent_pk_field' => 'id',
-				'parent_caption' => '`managers`.`name`',
-				'parent_from' => '`managers` ',
+				'parent_caption' => '`industries`.`name`',
+				'parent_from' => '`industries` ',
 				'filterers' => array(),
 				'custom_query' => '',
 				'inherit_permissions' => false,
@@ -50,10 +50,10 @@
 		),
 		'assignments' => array(   
 			'manager' => array(
-				'parent_table' => 'managers',
+				'parent_table' => 'industries',
 				'parent_pk_field' => 'id',
-				'parent_caption' => '`managers`.`name`',
-				'parent_from' => '`managers` ',
+				'parent_caption' => '`industries`.`name`',
+				'parent_from' => '`industries` ',
 				'filterers' => array(),
 				'custom_query' => '',
 				'inherit_permissions' => false,
@@ -61,10 +61,10 @@
 				'not_null' => true
 			),
 			'project' => array(
-				'parent_table' => 'projects',
+				'parent_table' => 'categories',
 				'parent_pk_field' => 'id',
-				'parent_caption' => '`projects`.`name`',
-				'parent_from' => '`projects` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`projects`.`manager` ',
+				'parent_caption' => '`categories`.`name`',
+				'parent_from' => '`categories` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`categories`.`manager` ',
 				'filterers' => array('manager' => 'manager'),
 				'custom_query' => '',
 				'inherit_permissions' => false,
@@ -74,12 +74,12 @@
 		),
 		'personal_time_table' => array(  
 		),
-		'notices' => array(   
+		'proposals' => array(   
 			'manager' => array(
-				'parent_table' => 'managers',
+				'parent_table' => 'industries',
 				'parent_pk_field' => 'id',
-				'parent_caption' => '`managers`.`name`',
-				'parent_from' => '`managers` ',
+				'parent_caption' => '`industries`.`name`',
+				'parent_from' => '`industries` ',
 				'filterers' => array(),
 				'custom_query' => '',
 				'inherit_permissions' => false,
@@ -87,10 +87,10 @@
 				'not_null' => true
 			),
 			'project' => array(
-				'parent_table' => 'projects',
+				'parent_table' => 'categories',
 				'parent_pk_field' => 'id',
-				'parent_caption' => '`projects`.`name`',
-				'parent_from' => '`projects` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`projects`.`manager` ',
+				'parent_caption' => '`categories`.`name`',
+				'parent_from' => '`categories` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`categories`.`manager` ',
 				'filterers' => array('manager' => 'manager'),
 				'custom_query' => '',
 				'inherit_permissions' => false,

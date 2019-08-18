@@ -6,37 +6,37 @@
 	/*************************************/
 
 		$pcConfig = array(
-			'managers' => array(   
+			'industries' => array(   
 			),
-			'projects' => array(   
+			'categories' => array(   
 				'manager' => array(   
-					'parent-table' => 'managers',
+					'parent-table' => 'industries',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
-					'tab-label' => 'Projects',
+					'tab-label' => 'Categories',
 					'auto-close' => true,
 					'table-icon' => 'resources/table_icons/chart_organisation.png',
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Name', 2 => 'Manager'),
+					'display-fields' => array(1 => 'Name', 2 => 'Industry'),
 					'display-field-names' => array(1 => 'name', 2 => 'manager'),
-					'sortable-fields' => array(0 => '`projects`.`id`', 1 => 2, 2 => '`managers1`.`name`'),
+					'sortable-fields' => array(0 => '`categories`.`id`', 1 => 2, 2 => '`industries1`.`name`'),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
 					'open-detail-view-on-click' => true,
 					'display-page-selector' => true,
 					'show-page-progress' => true,
-					'template' => 'children-projects',
-					'template-printable' => 'children-projects-printable',
-					'query' => "SELECT `projects`.`id` as 'id', `projects`.`name` as 'name', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager' FROM `projects` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`projects`.`manager` "
+					'template' => 'children-categories',
+					'template-printable' => 'children-categories-printable',
+					'query' => "SELECT `categories`.`id` as 'id', `categories`.`name` as 'name', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager' FROM `categories` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`categories`.`manager` "
 				)
 			),
 			'class_time_table' => array(   
 				'manager' => array(   
-					'parent-table' => 'managers',
+					'parent-table' => 'industries',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -46,9 +46,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Day', 2 => ' Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Manager', 7 => 'Project', 8 => 'Worker'),
-					'display-field-names' => array(1 => 'day', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'worker'),
-					'sortable-fields' => array(0 => '`class_time_table`.`id`', 1 => 2, 2 => '`class_time_table`.`time_start`', 3 => '`class_time_table`.`time_end`', 4 => 5, 5 => 6, 6 => '`managers1`.`name`', 7 => '`projects1`.`name`', 8 => 9),
+					'display-fields' => array(1 => 'Day', 2 => ' Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Industry', 7 => 'Category', 8 => 'Proposal'),
+					'display-field-names' => array(1 => 'day', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'proposal'),
+					'sortable-fields' => array(0 => '`class_time_table`.`id`', 1 => 2, 2 => '`class_time_table`.`time_start`', 3 => '`class_time_table`.`time_end`', 4 => 5, 5 => 6, 6 => '`industries1`.`name`', 7 => '`categories1`.`name`', 8 => 9),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -57,10 +57,10 @@
 					'show-page-progress' => true,
 					'template' => 'children-class_time_table',
 					'template-printable' => 'children-class_time_table-printable',
-					'query' => "SELECT `class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `class_time_table`.`worker` as 'worker' FROM `class_time_table` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`class_time_table`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`class_time_table`.`project` "
+					'query' => "SELECT `class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `class_time_table`.`proposal` as 'proposal' FROM `class_time_table` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`class_time_table`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`class_time_table`.`project` "
 				),
 				'project' => array(   
-					'parent-table' => 'projects',
+					'parent-table' => 'categories',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -70,9 +70,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Day', 2 => ' Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Manager', 7 => 'Project', 8 => 'Worker'),
-					'display-field-names' => array(1 => 'day', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'worker'),
-					'sortable-fields' => array(0 => '`class_time_table`.`id`', 1 => 2, 2 => '`class_time_table`.`time_start`', 3 => '`class_time_table`.`time_end`', 4 => 5, 5 => 6, 6 => '`managers1`.`name`', 7 => '`projects1`.`name`', 8 => 9),
+					'display-fields' => array(1 => 'Day', 2 => ' Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Industry', 7 => 'Category', 8 => 'Proposal'),
+					'display-field-names' => array(1 => 'day', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'proposal'),
+					'sortable-fields' => array(0 => '`class_time_table`.`id`', 1 => 2, 2 => '`class_time_table`.`time_start`', 3 => '`class_time_table`.`time_end`', 4 => 5, 5 => 6, 6 => '`industries1`.`name`', 7 => '`categories1`.`name`', 8 => 9),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -81,12 +81,12 @@
 					'show-page-progress' => true,
 					'template' => 'children-class_time_table',
 					'template-printable' => 'children-class_time_table-printable',
-					'query' => "SELECT `class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `class_time_table`.`worker` as 'worker' FROM `class_time_table` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`class_time_table`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`class_time_table`.`project` "
+					'query' => "SELECT `class_time_table`.`id` as 'id', `class_time_table`.`day` as 'day', TIME_FORMAT(`class_time_table`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`class_time_table`.`time_end`, '%r') as 'time_end', `class_time_table`.`unit_code` as 'unit_code', `class_time_table`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `class_time_table`.`proposal` as 'proposal' FROM `class_time_table` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`class_time_table`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`class_time_table`.`project` "
 				)
 			),
 			'assignments' => array(   
 				'manager' => array(   
-					'parent-table' => 'managers',
+					'parent-table' => 'industries',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -96,9 +96,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Date', 2 => 'Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Manager', 7 => 'Project', 8 => 'Worker'),
-					'display-field-names' => array(1 => 'date', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'worker'),
-					'sortable-fields' => array(0 => '`assignments`.`id`', 1 => '`assignments`.`date`', 2 => '`assignments`.`time_start`', 3 => '`assignments`.`time_end`', 4 => 5, 5 => 6, 6 => '`managers1`.`name`', 7 => '`projects1`.`name`', 8 => 9),
+					'display-fields' => array(1 => 'Date', 2 => 'Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Industry', 7 => 'Category', 8 => 'Proposal'),
+					'display-field-names' => array(1 => 'date', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'proposal'),
+					'sortable-fields' => array(0 => '`assignments`.`id`', 1 => '`assignments`.`date`', 2 => '`assignments`.`time_start`', 3 => '`assignments`.`time_end`', 4 => 5, 5 => 6, 6 => '`industries1`.`name`', 7 => '`categories1`.`name`', 8 => 9),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -107,10 +107,10 @@
 					'show-page-progress' => true,
 					'template' => 'children-assignments',
 					'template-printable' => 'children-assignments-printable',
-					'query' => "SELECT `assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `assignments`.`worker` as 'worker' FROM `assignments` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`assignments`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`assignments`.`project` "
+					'query' => "SELECT `assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `assignments`.`proposal` as 'proposal' FROM `assignments` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`assignments`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`assignments`.`project` "
 				),
 				'project' => array(   
-					'parent-table' => 'projects',
+					'parent-table' => 'categories',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -120,9 +120,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Date', 2 => 'Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Manager', 7 => 'Project', 8 => 'Worker'),
-					'display-field-names' => array(1 => 'date', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'worker'),
-					'sortable-fields' => array(0 => '`assignments`.`id`', 1 => '`assignments`.`date`', 2 => '`assignments`.`time_start`', 3 => '`assignments`.`time_end`', 4 => 5, 5 => 6, 6 => '`managers1`.`name`', 7 => '`projects1`.`name`', 8 => 9),
+					'display-fields' => array(1 => 'Date', 2 => 'Time Start', 3 => 'Time End', 4 => 'Unit code', 5 => 'Venue', 6 => 'Industry', 7 => 'Category', 8 => 'Proposal'),
+					'display-field-names' => array(1 => 'date', 2 => 'time_start', 3 => 'time_end', 4 => 'unit_code', 5 => 'venue', 6 => 'manager', 7 => 'project', 8 => 'proposal'),
+					'sortable-fields' => array(0 => '`assignments`.`id`', 1 => '`assignments`.`date`', 2 => '`assignments`.`time_start`', 3 => '`assignments`.`time_end`', 4 => 5, 5 => 6, 6 => '`industries1`.`name`', 7 => '`categories1`.`name`', 8 => 9),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -131,14 +131,14 @@
 					'show-page-progress' => true,
 					'template' => 'children-assignments',
 					'template-printable' => 'children-assignments-printable',
-					'query' => "SELECT `assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `assignments`.`worker` as 'worker' FROM `assignments` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`assignments`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`assignments`.`project` "
+					'query' => "SELECT `assignments`.`id` as 'id', if(`assignments`.`date`,date_format(`assignments`.`date`,'%m/%d/%Y'),'') as 'date', TIME_FORMAT(`assignments`.`time_start`, '%r') as 'time_start', TIME_FORMAT(`assignments`.`time_end`, '%r') as 'time_end', `assignments`.`unit_code` as 'unit_code', `assignments`.`venue` as 'venue', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `assignments`.`proposal` as 'proposal' FROM `assignments` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`assignments`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`assignments`.`project` "
 				)
 			),
 			'personal_time_table' => array(   
 			),
 			'student_details' => array(   
 				'manager' => array(   
-					'parent-table' => 'managers',
+					'parent-table' => 'industries',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -148,9 +148,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Full name', 2 => 'Manager', 3 => 'Project', 4 => 'Worker', 5 => 'Reg no'),
-					'display-field-names' => array(1 => 'full_name', 2 => 'manager', 3 => 'project', 4 => 'worker', 5 => 'reg_no'),
-					'sortable-fields' => array(0 => '`student_details`.`id`', 1 => 2, 2 => '`managers1`.`name`', 3 => '`projects1`.`name`', 4 => 5, 5 => 6),
+					'display-fields' => array(1 => 'Full name', 2 => 'Industry', 3 => 'Category', 4 => 'Proposal', 5 => 'Reg no'),
+					'display-field-names' => array(1 => 'full_name', 2 => 'manager', 3 => 'project', 4 => 'proposal', 5 => 'reg_no'),
+					'sortable-fields' => array(0 => '`student_details`.`id`', 1 => 2, 2 => '`industries1`.`name`', 3 => '`categories1`.`name`', 4 => 5, 5 => 6),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -159,10 +159,10 @@
 					'show-page-progress' => true,
 					'template' => 'children-student_details',
 					'template-printable' => 'children-student_details-printable',
-					'query' => "SELECT `student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `student_details`.`worker` as 'worker', `student_details`.`reg_no` as 'reg_no' FROM `student_details` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`student_details`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`student_details`.`project` "
+					'query' => "SELECT `student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `student_details`.`proposal` as 'proposal', `student_details`.`reg_no` as 'reg_no' FROM `student_details` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`student_details`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`student_details`.`project` "
 				),
 				'project' => array(   
-					'parent-table' => 'projects',
+					'parent-table' => 'categories',
 					'parent-primary-key' => 'id',
 					'child-primary-key' => 'id',
 					'child-primary-key-index' => 0,
@@ -172,9 +172,9 @@
 					'display-refresh' => true,
 					'display-add-new' => true,
 					'forced-where' => '',
-					'display-fields' => array(1 => 'Full name', 2 => 'Manager', 3 => 'Project', 4 => 'Worker', 5 => 'Reg no'),
-					'display-field-names' => array(1 => 'full_name', 2 => 'manager', 3 => 'project', 4 => 'worker', 5 => 'reg_no'),
-					'sortable-fields' => array(0 => '`student_details`.`id`', 1 => 2, 2 => '`managers1`.`name`', 3 => '`projects1`.`name`', 4 => 5, 5 => 6),
+					'display-fields' => array(1 => 'Full name', 2 => 'Industry', 3 => 'Category', 4 => 'Proposal', 5 => 'Reg no'),
+					'display-field-names' => array(1 => 'full_name', 2 => 'manager', 3 => 'project', 4 => 'proposal', 5 => 'reg_no'),
+					'sortable-fields' => array(0 => '`student_details`.`id`', 1 => 2, 2 => '`industries1`.`name`', 3 => '`categories1`.`name`', 4 => 5, 5 => 6),
 					'records-per-page' => 10,
 					'default-sort-by' => false,
 					'default-sort-direction' => 'asc',
@@ -183,10 +183,10 @@
 					'show-page-progress' => true,
 					'template' => 'children-student_details',
 					'template-printable' => 'children-student_details-printable',
-					'query' => "SELECT `student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') as 'project', `student_details`.`worker` as 'worker', `student_details`.`reg_no` as 'reg_no' FROM `student_details` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`student_details`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`student_details`.`project` "
+					'query' => "SELECT `student_details`.`id` as 'id', `student_details`.`full_name` as 'full_name', IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') as 'manager', IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') as 'project', `student_details`.`proposal` as 'proposal', `student_details`.`reg_no` as 'reg_no' FROM `student_details` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`student_details`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`student_details`.`project` "
 				)
 			),
-			'notices' => array(   
+			'proposals' => array(   
 			)
 		);
 

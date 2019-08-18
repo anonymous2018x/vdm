@@ -22,7 +22,7 @@
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
- * @category	Input
+ * @project	Input
  * @author		ExpressionEngine Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/input.html
  */

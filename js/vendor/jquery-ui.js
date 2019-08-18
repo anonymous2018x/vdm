@@ -1310,7 +1310,7 @@ var disableSelection = $.fn.extend( {
 // jscs:disable maximumLineLength
 //>>description: Extends the internal jQuery effects. Includes morphing and easing. Required by all other effects.
 // jscs:enable maximumLineLength
-//>>docs: http://api.jqueryui.com/category/effects-core/
+//>>docs: http://api.jqueryui.com/project/effects-core/
 //>>demos: http://jqueryui.com/effect/
 
 
@@ -12920,13 +12920,13 @@ $.widget( "ui.droppable", {
 			}
 		};
 
-		this._addToManager( o.scope );
+		this._addToIndustry( o.scope );
 
 		o.addClasses && this._addClass( "ui-droppable" );
 
 	},
 
-	_addToManager: function( scope ) {
+	_addToIndustry: function( scope ) {
 
 		// Add the reference and positions to the manager
 		$.ui.ddmanager.droppables[ scope ] = $.ui.ddmanager.droppables[ scope ] || [];
@@ -12958,7 +12958,7 @@ $.widget( "ui.droppable", {
 			var drop = $.ui.ddmanager.droppables[ this.options.scope ];
 
 			this._splice( drop );
-			this._addToManager( value );
+			this._addToIndustry( value );
 		}
 
 		this._super( key, value );

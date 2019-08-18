@@ -21,7 +21,7 @@ function datacounter($table){
 	echo $count;
 }
 
-function getnotices(){
+function getproposals(){
 	require'conn.php';
 	$user=getLoggedmemberID();
 	$getPkValue=mysqli_query($con,"SELECT pkValue AS pk FROM membership_userrecords WHERE memberID='$user' AND tableName='student_details'");
@@ -29,15 +29,15 @@ function getnotices(){
 		# code...loop 1
 		$storePk=$value0['pk'];
 	}
-	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, worker AS st_yos FROM student_details WHERE id='$storePk'");
+	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, proposal AS st_yos FROM student_details WHERE id='$storePk'");
 	foreach ($getStudentDetails as $key => $value1) {
 			# code...loop 2
-		$storeManager=$value1['st_manager'];
-		$storeProject=$value1['st_project'];
+		$storeIndustry=$value1['st_manager'];
+		$storeCategory=$value1['st_project'];
 		$storeYos=$value1['st_yos'];
 	}
 	#pagination
-	$query=mysqli_query($con,"select count(id) from `notices` where manager='$storeManager' and project='$storeProject' and worker='$storeYos'");
+	$query=mysqli_query($con,"select count(id) from `proposals` where manager='$storeIndustry' and project='$storeCategory' and proposal='$storeYos'");
 	$row = mysqli_fetch_row($query);
 
 	$rows = $row[0];
@@ -65,7 +65,7 @@ function getnotices(){
 	#set page limit here
 	$limit = 'LIMIT ' .($pagenum - 1) * $page_rows .',' .$page_rows;
 	#pagination
-	$bringnotices=mysqli_query($con,"SELECT * FROM notices WHERE manager='$storeManager' AND project='$storeProject' AND worker='$storeYos' ORDER BY id DESC $limit");
+	$bringproposals=mysqli_query($con,"SELECT * FROM proposals WHERE manager='$storeIndustry' AND project='$storeCategory' AND proposal='$storeYos' ORDER BY id DESC $limit");
 	#start pagination controls here
 	global $paginationCtrls;
 	$paginationCtrls = '';
@@ -101,15 +101,15 @@ function getnotices(){
 			$paginationCtrls .= ' &nbsp; &nbsp; <a href="'.$_SERVER['PHP_SELF'].'?pn='.$next.'" class="btn btn-primary btn-sm">Next</a> ';
 		}
 	}#pagination controls end here
-	$countcheck=mysqli_num_rows($bringnotices);
+	$countcheck=mysqli_num_rows($bringproposals);
 	if ($countcheck==0) {
 		# code...
-		echo '<div class="alert alert-warning text-center"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><b>You have no notices for now.</b></div>';
+		echo '<div class="alert alert-warning text-center"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><b>You have no proposals for now.</b></div>';
 	}
-	foreach ($bringnotices as $key => $value2) {
+	foreach ($bringproposals as $key => $value2) {
 		# code...
 		$noticeID=$value2['id'];
-		$getowner=mysqli_query($con,"SELECT memberID AS owner FROM membership_userrecords WHERE pkValue='$noticeID' AND tableName='notices'");
+		$getowner=mysqli_query($con,"SELECT memberID AS owner FROM membership_userrecords WHERE pkValue='$noticeID' AND tableName='proposals'");
 		foreach ($getowner as $key => $value3) {
 			# code...
 			$storeowner=$value3['owner'];
@@ -160,14 +160,14 @@ function getexams(){
 		# code...loop 1
 		$storePk=$value0['pk'];
 	}
-	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, worker AS st_yos FROM student_details WHERE id='$storePk'");
+	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, proposal AS st_yos FROM student_details WHERE id='$storePk'");
 	foreach ($getStudentDetails as $key => $value1) {
 			# code...loop 2
-		$storeManager=$value1['st_manager'];
-		$storeProject=$value1['st_project'];
+		$storeIndustry=$value1['st_manager'];
+		$storeCategory=$value1['st_project'];
 		$storeYos=$value1['st_yos'];
 	}
-	$getexams=mysqli_query($con,"SELECT * FROM assignments WHERE date='$today' AND manager='$storeManager' AND project='$storeProject' AND worker='$storeYos'");
+	$getexams=mysqli_query($con,"SELECT * FROM assignments WHERE date='$today' AND manager='$storeIndustry' AND project='$storeCategory' AND proposal='$storeYos'");
 			#count check here
 	$countcheck=mysqli_num_rows($getexams);
 	if ($countcheck==0) {
@@ -195,19 +195,19 @@ function examttlink(){
 		# code...loop 1
 		$storePk=$value0['pk'];
 	}
-	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, worker AS st_yos FROM student_details WHERE id='$storePk'");
+	$getStudentDetails=mysqli_query($con,"SELECT manager AS st_manager, project AS st_project, proposal AS st_yos FROM student_details WHERE id='$storePk'");
 	foreach ($getStudentDetails as $key => $value1) {
 			# code...loop 2
-		$storeManager=$value1['st_manager'];
-		$storeProject=$value1['st_project'];
+		$storeIndustry=$value1['st_manager'];
+		$storeCategory=$value1['st_project'];
 		$storeYos=$value1['st_yos'];
 	}
-	$getmanagerName=mysqli_query($con,"SELECT name sname FROM managers WHERE id='$storeManager'");
+	$getmanagerName=mysqli_query($con,"SELECT name sname FROM industries WHERE id='$storeIndustry'");
 	foreach ($getmanagerName as $key => $valueSN) {
 		# code...loop 3
 		$storeSName=$valueSN['sname'];
 	}
-	$getprojectName=mysqli_query($con,"SELECT name AS dname FROM projects WHERE id='$storeProject'");
+	$getprojectName=mysqli_query($con,"SELECT name AS dname FROM categories WHERE id='$storeCategory'");
 	foreach ($getprojectName as $key => $valueDN) {
 		# code... loop 4
 		$storeDName=$valueDN['dname'];

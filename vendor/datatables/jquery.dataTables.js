@@ -14281,7 +14281,7 @@
 		//
 		// Depreciated
 		// The following properties are retained for backwards compatiblity only.
-		// The should not be used in new projects and will be removed in a future
+		// The should not be used in new categories and will be removed in a future
 		// version
 		//
 	

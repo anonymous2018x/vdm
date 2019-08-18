@@ -30,8 +30,8 @@ function assignments_insert(){
 		if($data['manager'] == empty_lookup_value){ $data['manager'] = ''; }
 	$data['project'] = makeSafe($_REQUEST['project']);
 		if($data['project'] == empty_lookup_value){ $data['project'] = ''; }
-	$data['worker'] = makeSafe($_REQUEST['worker']);
-		if($data['worker'] == empty_lookup_value){ $data['worker'] = ''; }
+	$data['proposal'] = makeSafe($_REQUEST['proposal']);
+		if($data['proposal'] == empty_lookup_value){ $data['proposal'] = ''; }
 	if($data['date']== ''){
 		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Date': " . $Translation['field not null'] . '<br><br>';
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
@@ -58,17 +58,17 @@ function assignments_insert(){
 		exit;
 	}
 	if($data['manager']== ''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Manager': " . $Translation['field not null'] . '<br><br>';
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Industry': " . $Translation['field not null'] . '<br><br>';
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
 	if($data['project']== ''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Project': " . $Translation['field not null'] . '<br><br>';
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Category': " . $Translation['field not null'] . '<br><br>';
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
-	if($data['worker']== ''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Worker': " . $Translation['field not null'] . '<br><br>';
+	if($data['proposal']== ''){
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">" . $Translation['error:'] . " 'Proposal': " . $Translation['field not null'] . '<br><br>';
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
@@ -80,7 +80,7 @@ function assignments_insert(){
 	}
 
 	$o = array('silentErrors' => true);
-	sql('insert into `assignments` set       `date`=' . (($data['date'] !== '' && $data['date'] !== NULL) ? "'{$data['date']}'" : 'NULL') . ', `time_start`=' . (($data['time_start'] !== '' && $data['time_start'] !== NULL) ? "'{$data['time_start']}'" : 'NULL') . ', `time_end`=' . (($data['time_end'] !== '' && $data['time_end'] !== NULL) ? "'{$data['time_end']}'" : 'NULL') . ', `unit_code`=' . (($data['unit_code'] !== '' && $data['unit_code'] !== NULL) ? "'{$data['unit_code']}'" : 'NULL') . ', `venue`=' . (($data['venue'] !== '' && $data['venue'] !== NULL) ? "'{$data['venue']}'" : 'NULL') . ', `manager`=' . (($data['manager'] !== '' && $data['manager'] !== NULL) ? "'{$data['manager']}'" : 'NULL') . ', `project`=' . (($data['project'] !== '' && $data['project'] !== NULL) ? "'{$data['project']}'" : 'NULL') . ', `worker`=' . (($data['worker'] !== '' && $data['worker'] !== NULL) ? "'{$data['worker']}'" : 'NULL'), $o);
+	sql('insert into `assignments` set       `date`=' . (($data['date'] !== '' && $data['date'] !== NULL) ? "'{$data['date']}'" : 'NULL') . ', `time_start`=' . (($data['time_start'] !== '' && $data['time_start'] !== NULL) ? "'{$data['time_start']}'" : 'NULL') . ', `time_end`=' . (($data['time_end'] !== '' && $data['time_end'] !== NULL) ? "'{$data['time_end']}'" : 'NULL') . ', `unit_code`=' . (($data['unit_code'] !== '' && $data['unit_code'] !== NULL) ? "'{$data['unit_code']}'" : 'NULL') . ', `venue`=' . (($data['venue'] !== '' && $data['venue'] !== NULL) ? "'{$data['venue']}'" : 'NULL') . ', `manager`=' . (($data['manager'] !== '' && $data['manager'] !== NULL) ? "'{$data['manager']}'" : 'NULL') . ', `project`=' . (($data['project'] !== '' && $data['project'] !== NULL) ? "'{$data['project']}'" : 'NULL') . ', `proposal`=' . (($data['proposal'] !== '' && $data['proposal'] !== NULL) ? "'{$data['proposal']}'" : 'NULL'), $o);
 	if($o['error']!=''){
 		echo $o['error'];
 		echo "<a href=\"assignments_view.php?addNew_x=1\">{$Translation['< back']}</a>";
@@ -193,21 +193,21 @@ function assignments_update($selected_id){
 	$data['manager'] = makeSafe($_REQUEST['manager']);
 		if($data['manager'] == empty_lookup_value){ $data['manager'] = ''; }
 	if($data['manager']==''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Manager': {$Translation['field not null']}<br><br>";
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Industry': {$Translation['field not null']}<br><br>";
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
 	$data['project'] = makeSafe($_REQUEST['project']);
 		if($data['project'] == empty_lookup_value){ $data['project'] = ''; }
 	if($data['project']==''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Project': {$Translation['field not null']}<br><br>";
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Category': {$Translation['field not null']}<br><br>";
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
-	$data['worker'] = makeSafe($_REQUEST['worker']);
-		if($data['worker'] == empty_lookup_value){ $data['worker'] = ''; }
-	if($data['worker']==''){
-		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Worker': {$Translation['field not null']}<br><br>";
+	$data['proposal'] = makeSafe($_REQUEST['proposal']);
+		if($data['proposal'] == empty_lookup_value){ $data['proposal'] = ''; }
+	if($data['proposal']==''){
+		echo StyleSheet() . "\n\n<div class=\"alert alert-danger\">{$Translation['error:']} 'Proposal': {$Translation['field not null']}<br><br>";
 		echo '<a href="" onclick="history.go(-1); return false;">'.$Translation['< back'].'</a></div>';
 		exit;
 	}
@@ -220,7 +220,7 @@ function assignments_update($selected_id){
 	}
 
 	$o=array('silentErrors' => true);
-	sql('update `assignments` set       `date`=' . (($data['date'] !== '' && $data['date'] !== NULL) ? "'{$data['date']}'" : 'NULL') . ', `time_start`=' . (($data['time_start'] !== '' && $data['time_start'] !== NULL) ? "'{$data['time_start']}'" : 'NULL') . ', `time_end`=' . (($data['time_end'] !== '' && $data['time_end'] !== NULL) ? "'{$data['time_end']}'" : 'NULL') . ', `unit_code`=' . (($data['unit_code'] !== '' && $data['unit_code'] !== NULL) ? "'{$data['unit_code']}'" : 'NULL') . ', `venue`=' . (($data['venue'] !== '' && $data['venue'] !== NULL) ? "'{$data['venue']}'" : 'NULL') . ', `manager`=' . (($data['manager'] !== '' && $data['manager'] !== NULL) ? "'{$data['manager']}'" : 'NULL') . ', `project`=' . (($data['project'] !== '' && $data['project'] !== NULL) ? "'{$data['project']}'" : 'NULL') . ', `worker`=' . (($data['worker'] !== '' && $data['worker'] !== NULL) ? "'{$data['worker']}'" : 'NULL') . " where `id`='".makeSafe($selected_id)."'", $o);
+	sql('update `assignments` set       `date`=' . (($data['date'] !== '' && $data['date'] !== NULL) ? "'{$data['date']}'" : 'NULL') . ', `time_start`=' . (($data['time_start'] !== '' && $data['time_start'] !== NULL) ? "'{$data['time_start']}'" : 'NULL') . ', `time_end`=' . (($data['time_end'] !== '' && $data['time_end'] !== NULL) ? "'{$data['time_end']}'" : 'NULL') . ', `unit_code`=' . (($data['unit_code'] !== '' && $data['unit_code'] !== NULL) ? "'{$data['unit_code']}'" : 'NULL') . ', `venue`=' . (($data['venue'] !== '' && $data['venue'] !== NULL) ? "'{$data['venue']}'" : 'NULL') . ', `manager`=' . (($data['manager'] !== '' && $data['manager'] !== NULL) ? "'{$data['manager']}'" : 'NULL') . ', `project`=' . (($data['project'] !== '' && $data['project'] !== NULL) ? "'{$data['project']}'" : 'NULL') . ', `proposal`=' . (($data['proposal'] !== '' && $data['proposal'] !== NULL) ? "'{$data['proposal']}'" : 'NULL') . " where `id`='".makeSafe($selected_id)."'", $o);
 	if($o['error']!=''){
 		echo $o['error'];
 		echo '<a href="assignments_view.php?SelectedID='.urlencode($selected_id)."\">{$Translation['< back']}</a>";
@@ -266,7 +266,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 	$filterer_project = thisOr(undo_magic_quotes($_REQUEST['filterer_project']), '');
 
 	// populate filterers, starting from children to grand-parents
-	if($filterer_project && !$filterer_manager) $filterer_manager = sqlValue("select manager from projects where id='" . makeSafe($filterer_project) . "'");
+	if($filterer_project && !$filterer_manager) $filterer_manager = sqlValue("select manager from categories where id='" . makeSafe($filterer_project) . "'");
 
 	// unique random identifier
 	$rnd1 = ($dvprint ? rand(1000000, 9999999) : '');
@@ -282,22 +282,22 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 	$combo_manager = new DataCombo;
 	// combobox: project, filterable by: manager
 	$combo_project = new DataCombo;
-	// combobox: worker
-	$combo_worker = new Combo;
-	$combo_worker->ListType = 0;
-	$combo_worker->MultipleSeparator = ', ';
-	$combo_worker->ListBoxHeight = 10;
-	$combo_worker->RadiosPerLine = 1;
-	if(is_file(dirname(__FILE__).'/hooks/assignments.worker.csv')){
-		$worker_data = addslashes(implode('', @file(dirname(__FILE__).'/hooks/assignments.worker.csv')));
-		$combo_worker->ListItem = explode('||', entitiesToUTF8(convertLegacyOptions($worker_data)));
-		$combo_worker->ListData = $combo_worker->ListItem;
+	// combobox: proposal
+	$combo_proposal = new Combo;
+	$combo_proposal->ListType = 0;
+	$combo_proposal->MultipleSeparator = ', ';
+	$combo_proposal->ListBoxHeight = 10;
+	$combo_proposal->RadiosPerLine = 1;
+	if(is_file(dirname(__FILE__).'/hooks/assignments.proposal.csv')){
+		$proposal_data = addslashes(implode('', @file(dirname(__FILE__).'/hooks/assignments.proposal.csv')));
+		$combo_proposal->ListItem = explode('||', entitiesToUTF8(convertLegacyOptions($proposal_data)));
+		$combo_proposal->ListData = $combo_proposal->ListItem;
 	}else{
-		$combo_worker->ListItem = explode('||', entitiesToUTF8(convertLegacyOptions("1;;2;;3;;4;;5;;6")));
-		$combo_worker->ListData = $combo_worker->ListItem;
+		$combo_proposal->ListItem = explode('||', entitiesToUTF8(convertLegacyOptions("1;;2;;3;;4;;5;;6")));
+		$combo_proposal->ListData = $combo_proposal->ListItem;
 	}
-	$combo_worker->SelectName = 'worker';
-	$combo_worker->AllowNull = false;
+	$combo_proposal->SelectName = 'proposal';
+	$combo_proposal->AllowNull = false;
 
 	if($selected_id){
 		// mm: check member permissions
@@ -331,17 +331,17 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 		$combo_date->DefaultDate = $row['date'];
 		$combo_manager->SelectedData = $row['manager'];
 		$combo_project->SelectedData = $row['project'];
-		$combo_worker->SelectedData = $row['worker'];
+		$combo_proposal->SelectedData = $row['proposal'];
 	}else{
 		$combo_manager->SelectedData = $filterer_manager;
 		$combo_project->SelectedData = $filterer_project;
-		$combo_worker->SelectedText = ( $_REQUEST['FilterField'][1]=='9' && $_REQUEST['FilterOperator'][1]=='<=>' ? (get_magic_quotes_gpc() ? stripslashes($_REQUEST['FilterValue'][1]) : $_REQUEST['FilterValue'][1]) : "");
+		$combo_proposal->SelectedText = ( $_REQUEST['FilterField'][1]=='9' && $_REQUEST['FilterOperator'][1]=='<=>' ? (get_magic_quotes_gpc() ? stripslashes($_REQUEST['FilterValue'][1]) : $_REQUEST['FilterValue'][1]) : "");
 	}
 	$combo_manager->HTML = '<span id="manager-container' . $rnd1 . '"></span><input type="hidden" name="manager" id="manager' . $rnd1 . '" value="' . html_attr($combo_manager->SelectedData) . '">';
 	$combo_manager->MatchText = '<span id="manager-container-readonly' . $rnd1 . '"></span><input type="hidden" name="manager" id="manager' . $rnd1 . '" value="' . html_attr($combo_manager->SelectedData) . '">';
 	$combo_project->HTML = '<span id="project-container' . $rnd1 . '"></span><input type="hidden" name="project" id="project' . $rnd1 . '" value="' . html_attr($combo_project->SelectedData) . '">';
 	$combo_project->MatchText = '<span id="project-container-readonly' . $rnd1 . '"></span><input type="hidden" name="project" id="project' . $rnd1 . '" value="' . html_attr($combo_project->SelectedData) . '">';
-	$combo_worker->Render();
+	$combo_proposal->Render();
 
 	ob_start();
 	?>
@@ -374,7 +374,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 							});
 							$j('[name="manager"]').val(resp.results[0].id);
 							$j('[id=manager-container-readonly__RAND__]').html('<span id="manager-match-text">' + resp.results[0].text + '</span>');
-							if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=managers_view_parent]').hide(); }else{ $j('.btn[id=managers_view_parent]').show(); }
+							if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=industries_view_parent]').hide(); }else{ $j('.btn[id=industries_view_parent]').show(); }
 
 						if(typeof(project_reload__RAND__) == 'function') project_reload__RAND__(AppGini.current_manager__RAND__.value);
 
@@ -398,7 +398,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 				AppGini.current_manager__RAND__.value = e.added.id;
 				AppGini.current_manager__RAND__.text = e.added.text;
 				$j('[name="manager"]').val(e.added.id);
-				if(e.added.id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=managers_view_parent]').hide(); }else{ $j('.btn[id=managers_view_parent]').show(); }
+				if(e.added.id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=industries_view_parent]').hide(); }else{ $j('.btn[id=industries_view_parent]').show(); }
 
 						if(typeof(project_reload__RAND__) == 'function') project_reload__RAND__(AppGini.current_manager__RAND__.value);
 
@@ -413,7 +413,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 					success: function(resp){
 						$j('[name="manager"]').val(resp.results[0].id);
 						$j('[id=manager-container-readonly__RAND__]').html('<span id="manager-match-text">' + resp.results[0].text + '</span>');
-						if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=managers_view_parent]').hide(); }else{ $j('.btn[id=managers_view_parent]').show(); }
+						if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=industries_view_parent]').hide(); }else{ $j('.btn[id=industries_view_parent]').show(); }
 
 						if(typeof(manager_update_autofills__RAND__) == 'function') manager_update_autofills__RAND__();
 					}
@@ -428,7 +428,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 				data: { id: AppGini.current_manager__RAND__.value, t: 'assignments', f: 'manager' },
 				success: function(resp){
 					$j('[id=manager-container__RAND__], [id=manager-container-readonly__RAND__]').html('<span id="manager-match-text">' + resp.results[0].text + '</span>');
-					if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=managers_view_parent]').hide(); }else{ $j('.btn[id=managers_view_parent]').show(); }
+					if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=industries_view_parent]').hide(); }else{ $j('.btn[id=industries_view_parent]').show(); }
 
 					if(typeof(manager_update_autofills__RAND__) == 'function') manager_update_autofills__RAND__();
 				}
@@ -453,7 +453,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 							});
 							$j('[name="project"]').val(resp.results[0].id);
 							$j('[id=project-container-readonly__RAND__]').html('<span id="project-match-text">' + resp.results[0].text + '</span>');
-							if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=projects_view_parent]').hide(); }else{ $j('.btn[id=projects_view_parent]').show(); }
+							if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=categories_view_parent]').hide(); }else{ $j('.btn[id=categories_view_parent]').show(); }
 
 
 							if(typeof(project_update_autofills__RAND__) == 'function') project_update_autofills__RAND__();
@@ -476,7 +476,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 				AppGini.current_project__RAND__.value = e.added.id;
 				AppGini.current_project__RAND__.text = e.added.text;
 				$j('[name="project"]').val(e.added.id);
-				if(e.added.id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=projects_view_parent]').hide(); }else{ $j('.btn[id=projects_view_parent]').show(); }
+				if(e.added.id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=categories_view_parent]').hide(); }else{ $j('.btn[id=categories_view_parent]').show(); }
 
 
 				if(typeof(project_update_autofills__RAND__) == 'function') project_update_autofills__RAND__();
@@ -490,7 +490,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 					success: function(resp){
 						$j('[name="project"]').val(resp.results[0].id);
 						$j('[id=project-container-readonly__RAND__]').html('<span id="project-match-text">' + resp.results[0].text + '</span>');
-						if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=projects_view_parent]').hide(); }else{ $j('.btn[id=projects_view_parent]').show(); }
+						if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=categories_view_parent]').hide(); }else{ $j('.btn[id=categories_view_parent]').show(); }
 
 						if(typeof(project_update_autofills__RAND__) == 'function') project_update_autofills__RAND__();
 					}
@@ -505,7 +505,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 				data: { id: AppGini.current_project__RAND__.value, t: 'assignments', f: 'project' },
 				success: function(resp){
 					$j('[id=project-container__RAND__], [id=project-container-readonly__RAND__]').html('<span id="project-match-text">' + resp.results[0].text + '</span>');
-					if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=projects_view_parent]').hide(); }else{ $j('.btn[id=projects_view_parent]').show(); }
+					if(resp.results[0].id == '<?php echo empty_lookup_value; ?>'){ $j('.btn[id=categories_view_parent]').hide(); }else{ $j('.btn[id=categories_view_parent]').show(); }
 
 					if(typeof(project_update_autofills__RAND__) == 'function') project_update_autofills__RAND__();
 				}
@@ -581,7 +581,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 		$jsReadOnly .= "\tjQuery('#manager_caption').prop('disabled', true).css({ color: '#555', backgroundColor: 'white' });\n";
 		$jsReadOnly .= "\tjQuery('#project').prop('disabled', true).css({ color: '#555', backgroundColor: '#fff' });\n";
 		$jsReadOnly .= "\tjQuery('#project_caption').prop('disabled', true).css({ color: '#555', backgroundColor: 'white' });\n";
-		$jsReadOnly .= "\tjQuery('#worker').replaceWith('<div class=\"form-control-static\" id=\"worker\">' + (jQuery('#worker').val() || '') + '</div>'); jQuery('#worker-multi-selection-help').hide();\n";
+		$jsReadOnly .= "\tjQuery('#proposal').replaceWith('<div class=\"form-control-static\" id=\"proposal\">' + (jQuery('#proposal').val() || '') + '</div>'); jQuery('#proposal-multi-selection-help').hide();\n";
 		$jsReadOnly .= "\tjQuery('.select2-container').hide();\n";
 
 		$noUploads = true;
@@ -601,11 +601,11 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 	$templateCode = str_replace('<%%COMBO(project)%%>', $combo_project->HTML, $templateCode);
 	$templateCode = str_replace('<%%COMBOTEXT(project)%%>', $combo_project->MatchText, $templateCode);
 	$templateCode = str_replace('<%%URLCOMBOTEXT(project)%%>', urlencode($combo_project->MatchText), $templateCode);
-	$templateCode = str_replace('<%%COMBO(worker)%%>', $combo_worker->HTML, $templateCode);
-	$templateCode = str_replace('<%%COMBOTEXT(worker)%%>', $combo_worker->SelectedData, $templateCode);
+	$templateCode = str_replace('<%%COMBO(proposal)%%>', $combo_proposal->HTML, $templateCode);
+	$templateCode = str_replace('<%%COMBOTEXT(proposal)%%>', $combo_proposal->SelectedData, $templateCode);
 
 	/* lookup fields array: 'lookup field name' => array('parent table name', 'lookup field caption') */
-	$lookup_fields = array(  'manager' => array('managers', 'Manager'), 'project' => array('projects', 'Project'));
+	$lookup_fields = array(  'manager' => array('industries', 'Industry'), 'project' => array('categories', 'Category'));
 	foreach($lookup_fields as $luf => $ptfc){
 		$pt_perm = getTablePermissions($ptfc[0]);
 
@@ -629,7 +629,7 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 	$templateCode = str_replace('<%%UPLOADFILE(venue)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(manager)%%>', '', $templateCode);
 	$templateCode = str_replace('<%%UPLOADFILE(project)%%>', '', $templateCode);
-	$templateCode = str_replace('<%%UPLOADFILE(worker)%%>', '', $templateCode);
+	$templateCode = str_replace('<%%UPLOADFILE(proposal)%%>', '', $templateCode);
 
 	// process values
 	if($selected_id){
@@ -654,9 +654,9 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 		if( $dvprint) $templateCode = str_replace('<%%VALUE(project)%%>', safe_html($urow['project']), $templateCode);
 		if(!$dvprint) $templateCode = str_replace('<%%VALUE(project)%%>', html_attr($row['project']), $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(project)%%>', urlencode($urow['project']), $templateCode);
-		if( $dvprint) $templateCode = str_replace('<%%VALUE(worker)%%>', safe_html($urow['worker']), $templateCode);
-		if(!$dvprint) $templateCode = str_replace('<%%VALUE(worker)%%>', html_attr($row['worker']), $templateCode);
-		$templateCode = str_replace('<%%URLVALUE(worker)%%>', urlencode($urow['worker']), $templateCode);
+		if( $dvprint) $templateCode = str_replace('<%%VALUE(proposal)%%>', safe_html($urow['proposal']), $templateCode);
+		if(!$dvprint) $templateCode = str_replace('<%%VALUE(proposal)%%>', html_attr($row['proposal']), $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(proposal)%%>', urlencode($urow['proposal']), $templateCode);
 	}else{
 		$templateCode = str_replace('<%%VALUE(id)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(id)%%>', urlencode(''), $templateCode);
@@ -674,8 +674,8 @@ function assignments_form($selected_id = '', $AllowUpdate = 1, $AllowInsert = 1,
 		$templateCode = str_replace('<%%URLVALUE(manager)%%>', urlencode(''), $templateCode);
 		$templateCode = str_replace('<%%VALUE(project)%%>', '', $templateCode);
 		$templateCode = str_replace('<%%URLVALUE(project)%%>', urlencode(''), $templateCode);
-		$templateCode = str_replace('<%%VALUE(worker)%%>', '', $templateCode);
-		$templateCode = str_replace('<%%URLVALUE(worker)%%>', urlencode(''), $templateCode);
+		$templateCode = str_replace('<%%VALUE(proposal)%%>', '', $templateCode);
+		$templateCode = str_replace('<%%URLVALUE(proposal)%%>', urlencode(''), $templateCode);
 	}
 
 	// process translations

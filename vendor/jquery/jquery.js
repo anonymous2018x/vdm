@@ -465,7 +465,7 @@ jQuery.extend( {
 	// A global GUID counter for objects
 	guid: 1,
 
-	// jQuery.support is not used in Core but other projects attach their
+	// jQuery.support is not used in Core but other categories attach their
 	// properties to it so it needs to exist.
 	support: support
 } );
@@ -975,7 +975,7 @@ function createDisabledPseudo( disabled ) {
 
 			// Check for inherited disabledness on relevant non-disabled elements:
 			// * listed form-associated elements in a disabled fieldset
-			//   https://html.spec.whatwg.org/multipage/forms.html#category-listed
+			//   https://html.spec.whatwg.org/multipage/forms.html#project-listed
 			//   https://html.spec.whatwg.org/multipage/forms.html#concept-fe-disabled
 			// * option elements in a disabled optgroup
 			//   https://html.spec.whatwg.org/multipage/forms.html#concept-option-disabled

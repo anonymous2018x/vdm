@@ -267,18 +267,18 @@ function fix_table_responsive_width(){
 	}
 }
 
-function managers_validateData(){
+function industries_validateData(){
 	$j('.has-error').removeClass('has-error');
 	/* Field name can't be empty */
 	if($j('#name').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Name", close: function(){ /* */ $j('[name=name]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
-function projects_validateData(){
+function categories_validateData(){
 	$j('.has-error').removeClass('has-error');
 	/* Field name can't be empty */
 	if($j('#name').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Name", close: function(){ /* */ $j('[name=name]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field manager can't be empty */
-	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Manager", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Industry", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
 
@@ -297,11 +297,11 @@ function assignments_validateData(){
 	/* Field venue can't be empty */
 	if($j('#venue').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Venue", close: function(){ /* */ $j('[name=venue]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field manager can't be empty */
-	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Manager", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Industry", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field project can't be empty */
-	if($j('#project').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Project", close: function(){ /* */ $j('[name=project]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
-	/* Field worker can't be empty */
-	if($j('#worker').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Worker", close: function(){ /* */ $j('[name=worker]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#project').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Category", close: function(){ /* */ $j('[name=project]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	/* Field proposal can't be empty */
+	if($j('#proposal').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Proposal", close: function(){ /* */ $j('[name=proposal]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
 function personal_time_table_validateData(){
@@ -317,16 +317,16 @@ function personal_time_table_validateData(){
 	return true;
 }
 
-function notices_validateData(){
+function proposals_validateData(){
 	$j('.has-error').removeClass('has-error');
 	/* Field notice can't be empty */
-	if($j('#notice').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Notice", close: function(){ /* */ $j('[name=notice]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#notice').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Description", close: function(){ /* */ $j('[name=notice]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field manager can't be empty */
-	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Manager", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#manager').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Industry", close: function(){ /* */ $j('[name=manager]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	/* Field project can't be empty */
-	if($j('#project').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Project", close: function(){ /* */ $j('[name=project]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
-	/* Field worker can't be empty */
-	if($j('#worker').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Worker", close: function(){ /* */ $j('[name=worker]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	if($j('#project').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Category", close: function(){ /* */ $j('[name=project]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
+	/* Field proposal can't be empty */
+	if($j('#proposal').val() == ''){ modal_window({ message: '<div class="alert alert-danger"><?php echo addslashes($Translation['field not null']); ?></div>', title: "<?php echo addslashes($Translation['error:']); ?> Proposal", close: function(){ /* */ $j('[name=proposal]').eq(0).focus().parents('.form-group').addClass('has-error'); }, footer: [{ label: '<?php echo addslashes($Translation['ok']); ?>' }] }); return false; };
 	return true;
 }
 

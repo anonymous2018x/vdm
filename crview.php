@@ -23,10 +23,10 @@
               <div class="card-body-icon">
                 <i class="fa fa-fw fa-users"></i>
               </div>
-              <div class="mr-5">Notices</div>
+              <div class="mr-5">Proposals</div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="notices_view.php">
-              <span class="float-left">Add Notices</span>
+            <a class="card-footer text-white clearfix small z-1" href="proposals_view.php">
+              <span class="float-left">Add Proposals</span>
               <span class="float-right">
                 <i class="fa fa-angle-right"></i>
               </span>

@@ -10,11 +10,11 @@
 
 	/* application schema as created in AppGini */
 	$schema = array(   
-		'managers' => array(   
+		'industries' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
 			'name' => array('appgini' => 'VARCHAR(40) not null ')
 		),
-		'projects' => array(   
+		'categories' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
 			'name' => array('appgini' => 'VARCHAR(40) not null '),
 			'manager' => array('appgini' => 'INT unsigned not null ')
@@ -28,7 +28,7 @@
 			'venue' => array('appgini' => 'VARCHAR(40) not null '),
 			'manager' => array('appgini' => 'INT unsigned not null '),
 			'project' => array('appgini' => 'INT unsigned not null '),
-			'worker' => array('appgini' => 'VARCHAR(40) not null ')
+			'proposal' => array('appgini' => 'VARCHAR(40) not null ')
 		),
 		'personal_time_table' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
@@ -37,12 +37,12 @@
 			'time_end' => array('appgini' => 'TIME not null '),
 			'activity' => array('appgini' => 'VARCHAR(40) not null ')
 		),
-		'notices' => array(   
+		'proposals' => array(   
 			'id' => array('appgini' => 'INT unsigned not null primary key auto_increment '),
 			'notice' => array('appgini' => 'TEXT not null '),
 			'manager' => array('appgini' => 'INT unsigned not null '),
 			'project' => array('appgini' => 'INT unsigned not null '),
-			'worker' => array('appgini' => 'VARCHAR(40) not null '),
+			'proposal' => array('appgini' => 'VARCHAR(40) not null '),
 			'date' => array('appgini' => 'DATE ')
 		)
 	);

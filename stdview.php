@@ -74,7 +74,7 @@
 		</div>
 	</div>
 </div>
-<!--Notices-->
+<!--Proposals-->
 <div class="mb-0 mt-4">
 	<i class="fa fa-newspaper-o"></i> News Feed</div>
 	<hr class="mt-2">
@@ -84,9 +84,9 @@
 <!-- Example Notifications Card-->
 <div class="card mb-3">
 	<div class="card-header">
-		<i class="fa fa-bell-o"></i> <strong>Recent Notices</strong></div>
+		<i class="fa fa-bell-o"></i> <strong>Recent Proposals</strong></div>
 		<div class="list-group list-group-flush small">
-			<?php  getnotices(); ?>
+			<?php  getproposals(); ?>
 			
 				<div class="text-center" id="pagination_controls">
 					<?php /*display pagination controls on page*/ echo $paginationCtrls;?>

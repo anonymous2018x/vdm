@@ -28,9 +28,9 @@
 		"TIME_FORMAT(`assignments`.`time_end`, '%r')" => "time_end",
 		"`assignments`.`unit_code`" => "unit_code",
 		"`assignments`.`venue`" => "venue",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`assignments`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`assignments`.`proposal`" => "proposal"
 	);
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = array(   
@@ -40,8 +40,8 @@
 		4 => '`assignments`.`time_end`',
 		5 => 5,
 		6 => 6,
-		7 => '`managers1`.`name`',
-		8 => '`projects1`.`name`',
+		7 => '`industries1`.`name`',
+		8 => '`categories1`.`name`',
 		9 => 9
 	);
 
@@ -53,9 +53,9 @@
 		"TIME_FORMAT(`assignments`.`time_end`, '%r')" => "time_end",
 		"`assignments`.`unit_code`" => "unit_code",
 		"`assignments`.`venue`" => "venue",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`assignments`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`assignments`.`proposal`" => "proposal"
 	);
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = array(   
@@ -65,9 +65,9 @@
 		"`assignments`.`time_end`" => "Time End",
 		"`assignments`.`unit_code`" => "Unit code",
 		"`assignments`.`venue`" => "Venue",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "Manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "Project",
-		"`assignments`.`worker`" => "Worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "Industry",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "Category",
+		"`assignments`.`proposal`" => "Proposal"
 	);
 
 	// Fields that can be quick searched
@@ -78,15 +78,15 @@
 		"TIME_FORMAT(`assignments`.`time_end`, '%r')" => "time_end",
 		"`assignments`.`unit_code`" => "unit_code",
 		"`assignments`.`venue`" => "venue",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`assignments`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`assignments`.`proposal`" => "proposal"
 	);
 
 	// Lookup fields that can be used as filterers
-	$x->filterers = array(  'manager' => 'Manager', 'project' => 'Project');
+	$x->filterers = array(  'manager' => 'Industry', 'project' => 'Category');
 
-	$x->QueryFrom = "`assignments` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`assignments`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`assignments`.`project` ";
+	$x->QueryFrom = "`assignments` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`assignments`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`assignments`.`project` ";
 	$x->QueryWhere = '';
 	$x->QueryOrder = '';
 
@@ -114,8 +114,8 @@
 	$x->PrimaryKey = "`assignments`.`id`";
 
 	$x->ColWidth   = array(  150, 150, 150, 150, 150, 150, 150, 150);
-	$x->ColCaption = array("Date", "Time Start", "Time End", "Unit code", "Venue", "Manager", "Project", "Worker");
-	$x->ColFieldName = array('date', 'time_start', 'time_end', 'unit_code', 'venue', 'manager', 'project', 'worker');
+	$x->ColCaption = array("Date", "Time Start", "Time End", "Unit code", "Venue", "Industry", "Category", "Proposal");
+	$x->ColFieldName = array('date', 'time_start', 'time_end', 'unit_code', 'venue', 'manager', 'project', 'proposal');
 	$x->ColNumber  = array(2, 3, 4, 5, 6, 7, 8, 9);
 
 	// template paths below are based on the app main directory

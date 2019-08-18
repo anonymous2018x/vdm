@@ -24,16 +24,16 @@
 	$x->QueryFieldsTV = array(   
 		"`personal_details`.`id`" => "id",
 		"`personal_details`.`full_name`" => "full_name",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`personal_details`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`personal_details`.`proposal`" => "proposal"
 	);
 	// mapping incoming sort by requests to actual query fields
 	$x->SortFields = array(   
 		1 => '`personal_details`.`id`',
 		2 => 2,
-		3 => '`managers1`.`name`',
-		4 => '`projects1`.`name`',
+		3 => '`industries1`.`name`',
+		4 => '`categories1`.`name`',
 		5 => 5
 	);
 
@@ -41,32 +41,32 @@
 	$x->QueryFieldsCSV = array(   
 		"`personal_details`.`id`" => "id",
 		"`personal_details`.`full_name`" => "full_name",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`personal_details`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`personal_details`.`proposal`" => "proposal"
 	);
 	// Fields that can be filtered
 	$x->QueryFieldsFilters = array(   
 		"`personal_details`.`id`" => "ID",
 		"`personal_details`.`full_name`" => "Full name",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "Manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "Project",
-		"`personal_details`.`worker`" => "Worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "Industry",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "Category",
+		"`personal_details`.`proposal`" => "Proposal"
 	);
 
 	// Fields that can be quick searched
 	$x->QueryFieldsQS = array(   
 		"`personal_details`.`id`" => "id",
 		"`personal_details`.`full_name`" => "full_name",
-		"IF(    CHAR_LENGTH(`managers1`.`name`), CONCAT_WS('',   `managers1`.`name`), '') /* Manager */" => "manager",
-		"IF(    CHAR_LENGTH(`projects1`.`name`), CONCAT_WS('',   `projects1`.`name`), '') /* Project */" => "project",
-		"`personal_details`.`worker`" => "worker"
+		"IF(    CHAR_LENGTH(`industries1`.`name`), CONCAT_WS('',   `industries1`.`name`), '') /* Industry */" => "manager",
+		"IF(    CHAR_LENGTH(`categories1`.`name`), CONCAT_WS('',   `categories1`.`name`), '') /* Category */" => "project",
+		"`personal_details`.`proposal`" => "proposal"
 	);
 
 	// Lookup fields that can be used as filterers
-	$x->filterers = array(  'manager' => 'Manager', 'project' => 'Project');
+	$x->filterers = array(  'manager' => 'Industry', 'project' => 'Category');
 
-	$x->QueryFrom = "`personal_details` LEFT JOIN `managers` as managers1 ON `managers1`.`id`=`personal_details`.`manager` LEFT JOIN `projects` as projects1 ON `projects1`.`id`=`personal_details`.`project` ";
+	$x->QueryFrom = "`personal_details` LEFT JOIN `industries` as industries1 ON `industries1`.`id`=`personal_details`.`manager` LEFT JOIN `categories` as categories1 ON `categories1`.`id`=`personal_details`.`project` ";
 	$x->QueryWhere = '';
 	$x->QueryOrder = '';
 
@@ -94,8 +94,8 @@
 	$x->PrimaryKey = "`personal_details`.`id`";
 
 	$x->ColWidth   = array(  150, 150, 150, 150);
-	$x->ColCaption = array("Full name", "Manager", "Project", "Worker");
-	$x->ColFieldName = array('full_name', 'manager', 'project', 'worker');
+	$x->ColCaption = array("Full name", "Industry", "Category", "Proposal");
+	$x->ColFieldName = array('full_name', 'manager', 'project', 'proposal');
 	$x->ColNumber  = array(2, 3, 4, 5);
 
 	// template paths below are based on the app main directory

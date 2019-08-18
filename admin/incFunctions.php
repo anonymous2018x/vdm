@@ -74,15 +74,15 @@
 
 		$all_tables = array(
 			/* ['table_name' => [table props assoc array] */   
-				'managers' => array(
-					'Caption' => 'Managers',
+				'industries' => array(
+					'Caption' => 'Industries',
 					'Description' => '',
 					'tableIcon' => 'resources/table_icons/building.png',
 					'group' => $tg[0],
 					'homepageShowCount' => 0
 				),
-				'projects' => array(
-					'Caption' => 'Projects',
+				'categories' => array(
+					'Caption' => 'Categories',
 					'Description' => '',
 					'tableIcon' => 'resources/table_icons/chart_organisation.png',
 					'group' => $tg[0],
@@ -95,8 +95,8 @@
 					'group' => $tg[0],
 					'homepageShowCount' => 0
 				),
-				'notices' => array(
-					'Caption' => 'Notices',
+				'proposals' => array(
+					'Caption' => 'Proposals',
 					'Description' => '',
 					'tableIcon' => 'resources/table_icons/clipboard_empty.png',
 					'group' => $tg[0],
@@ -117,11 +117,11 @@
 	if(!function_exists('getTableList')){
 		function getTableList($skip_authentication = false){
 			$arrTables = array(   
-				'managers' => 'Managers',
-				'projects' => 'Projects',
+				'industries' => 'Industries',
+				'categories' => 'Categories',
 				'assignments' => 'Assignments',
 				'personal_time_table' => 'Personal time table',
-				'notices' => 'Notices'
+				'proposals' => 'Proposals'
 			);
 
 			return $arrTables;
@@ -936,7 +936,7 @@
 
 		$pd = dir($plugins_path);
 		while(false !== ($plugin = $pd->read())){
-			if(!is_dir($plugins_path . $plugin) || in_array($plugin, array('projects', 'plugins-resources', '.', '..'))) continue;
+			if(!is_dir($plugins_path . $plugin) || in_array($plugin, array('categories', 'plugins-resources', '.', '..'))) continue;
 
 			$info_file = "{$plugins_path}{$plugin}/plugin-info.json";
 			if(!is_file($info_file)) continue;
