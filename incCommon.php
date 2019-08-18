@@ -47,7 +47,6 @@
 			/* 'table_name' => ['table caption', 'homepage description', 'icon', 'table group name'] */   
 			'industries' => array('Industries', '', 'resources/table_icons/building.png', 'None'),
 			'categories' => array('Categories', '', 'resources/table_icons/chart_organisation.png', 'None'),
-			'assignments' => array('Assignments', '', 'resources/table_icons/books.png', 'None'),
 			'proposals' => array('Proposals', '', 'resources/table_icons/clipboard_empty.png', 'None')
 		);
 		if($skip_authentication || getLoggedAdmin()) return $arrTables;

@@ -99,8 +99,8 @@
 	$x->PrimaryKey = "`proposals`.`id`";
 
 	$x->ColWidth   = array(  150, 150, 150, 150, 150);
-	$x->ColCaption = array("Description", "Industry", "Category", "Proposal", "Date");
-	$x->ColFieldName = array('notice', 'manager', 'project', 'proposal', 'date');
+	$x->ColCaption = array("Proposal", "Description", "Industry", "Category", "Date");
+	$x->ColFieldName = array('proposal', 'notice', 'manager', 'project', 'date');
 	$x->ColNumber  = array(2, 3, 4, 5, 6);
 
 	// template paths below are based on the app main directory

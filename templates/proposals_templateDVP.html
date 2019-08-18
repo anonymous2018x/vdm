@@ -20,6 +20,13 @@
 				<div class="form-control-static"><%%VALUE(id)%%></div>
 			</div>
 		</div>
+		<div class="form-group">
+			<hr class="hidden-md hidden-lg">
+			<label for="proposal" class="control-label col-lg-3">Proposal<span class="text-danger"><%%TRANSLATION(*)%%></span></label>
+			<div class="col-lg-9">
+					<input maxlength="40" type="text" class="form-control" name="proposal" id="proposal" value="<%%VALUE(proposal)%%>" required>
+			</div>
+		</div>
 		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
 			<label class="col-xs-3 control-label">Description</label>
 			<div class="col-xs-9">
@@ -38,12 +45,7 @@
 				<div class="form-control-static"><span id="project<%%RND1%%>"><%%COMBOTEXT(project)%%></span></div>
 			</div>
 		</div>
-		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
-			<label class="col-xs-3 control-label">Proposal</label>
-			<div class="col-xs-9">
-				<div class="form-control-static"><%%COMBOTEXT(proposal)%%></div>
-			</div>
-		</div>
+		
 		<div class="form-group" style="border-bottom: dotted 1px #DDD;">
 			<label class="col-xs-3 control-label">Date</label>
 			<div class="col-xs-9">
