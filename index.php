@@ -395,7 +395,7 @@ signInFailure: function(error) {
                     </div>
                     <div class="col-xs-12 col-sm-4">
                         <div class="footer-box">
-                            <a  href="#" class="box-icon">
+                            <a  href="https://www.youtube.com/channel/UCWEzgdZ-_xbWUPqMU-sTpdA?view_as=subscriber" class="box-icon">
                               <i class="fab fa-youtube h3"></i>
                                 Youtube
                             </a>
