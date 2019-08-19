@@ -277,6 +277,9 @@ signInFailure: function(error) {
             <a class="nav-link js-scroll-trigger" href="#home">Home</a>
           </li>
           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#signin">Sign in</a>
           </li>
           <li class="nav-item">
@@ -297,20 +300,51 @@ signInFailure: function(error) {
                 </div>
                 <div id="home-text" class="col-xs-12 col-md-7 ">
                     <div class="space-80 hidden-xs"></div>
-                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing project proposals through <span class="h2">Village Developers Management L.t.d</span>.</h3>
+                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing project proposals through <span class="h2">Village Developers Management</span>.</h3>
                     <div class="space-20"></div>
                     <div class="desc wow fadeInUp" data-wow-delay="0.6s">
                         <p>A place people are proud to own it.</p>
                   </div>
                   <div class="space-20"></div>
                   <a href="#" class="badeInUp btn btn-sm btn-primary" data-wow-delay="0.8s" data-toggle="modal" data-target="#signup"><i class="lnr lnr-chevron-right"></i>Register</a>
-                <span class="h3">or </span> 
+                <span class="h5">or </span> 
               <a href="#signin" class="fadeInUp btn btn-sm btn-success">Sign in</a>
           </div>
       </div>
     </div>
   </header>
 
+  <section class="section-padding" id="about">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="page-title text-center">
+                        <h1 class="display-4">ABOUT</h1>
+                        <p class="h6 font-italic">Let's make something great together.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                        <div class="card text-white">
+                            <div class="card-header bg-dark text-center">Vision</div>
+                            <div class="card-body" style="color: black;">
+                                <p class="card-text">To contest community in practical income generating.</p>
+                            </div>
+                        </div>
+
+                        </div>
+                        <div class="col-sm-8">
+                        <div class="card text-white">
+                            <div class="card-header bg-dark text-center">Mission</div>
+                            <div class="card-body" style="color: black;">
+                                <p class="card-text">To be the best empowering management firm in the community on services to offer such as business management and advertisement.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Home-Area-End -->
     <!-- register -->
     <?php include("register.php")?>
