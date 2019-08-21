@@ -1,10 +1,15 @@
+<?php if(!defined('PREPEND_PATH')) define('PREPEND_PATH', ''); ?>
+<?php if(!defined('datalist_db_encoding')) define('datalist_db_encoding', 'UTF-8'); ?>
+
+
 <?php
+  $app_name = 'VDM';
 	error_reporting(E_ERROR | E_WARNING | E_PARSE);
 	$currDir = dirname(__FILE__);
 	include("{$currDir}/defaultLang.php");
 	include("{$currDir}/language.php");
     include("{$currDir}/lib.php");
-    $app_name = 'VDM';
+    
 
 	$x = new DataList;
 	$x->TableTitle = $Translation['homepage'];
@@ -33,6 +38,11 @@
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="icon" href="images/heads.png">
+  
+  <link rel="stylesheet" href="<?php echo PREPEND_PATH; ?>resources/initializr/css/bootstrap.css">
+  <link rel="stylesheet" href="<?php echo PREPEND_PATH; ?>resources/lightbox/css/lightbox.css" media="screen">
+	<link rel="stylesheet" href="<?php echo PREPEND_PATH; ?>resources/select2/select2.css" media="screen">
+    
 
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -47,6 +57,8 @@
   <!-- Custom styles for this template -->
   <link href="css/new-age.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/responsive.css">
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script>var $j = jQuery.noConflict();</script>
   <style>
 .masthead{
   background-repeat: no-repeat;
@@ -98,7 +110,7 @@
 }
  
 .modal-dialog {
-    padding-top: 100px;
+    margin-top: 100px;
   display: inline-block;
   text-align: left;
   vertical-align: middle;
@@ -135,6 +147,8 @@
     color: #fff;
 }
 </style>
+
+
 
 <script>
     var user_state="";
@@ -192,15 +206,15 @@ signInSuccessWithAuthResult: function(authResult, redirectUrl) {
   // On success redirect to signInSuccessUrl.
 
   // get user mobile
-  $("#phone").val(authResult.user.providerData[0].uid);
+  $j("#phone").val(authResult.user.providerData[0].uid);
   switch(window.user_state){
     case "new-group" :
-      $("#register-group").show();
-      $("#firebaseui-auth-container").hide();
+      $j("#register-group").show();
+      $j("#firebaseui-auth-container").hide();
     break;
     default:
-      $("#firebaseui-auth-container").hide();
-      $("#register-user").show();
+      $j("#firebaseui-auth-container").hide();
+      $j("#register-user").show();
   }
   
 
@@ -297,7 +311,7 @@ signInFailure: function(error) {
                 </div>
                 <div id="home-text" class="col-xs-12 col-md-7 ">
                     <div class="space-80 hidden-xs"></div>
-                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing project proposals through <span class="h2">Village Developers Management L.t.d</span>.</h3>
+                    <h3 class="wow fadeInUp" data-wow-delay="0.4s">Start your amazing project proposals through <span class="h2">Village Developers Management Limited</span>.</h3>
                     <div class="space-20"></div>
                     <div class="desc wow fadeInUp" data-wow-delay="0.6s">
                         <p>A place people are proud to own it.</p>
@@ -434,7 +448,7 @@ signInFailure: function(error) {
     </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Plugin JavaScript -->
@@ -444,80 +458,88 @@ signInFailure: function(error) {
   <script src="js/new-age.min.js"></script>
   <script>
     var groupID=0;
-    $(document).ready(function(){
-        
+    $j(document).ready(function(){
         window.history.pushState(null, "", window.location.href);        
         window.onpopstate = function() {
             window.history.pushState(null, "", window.location.href);
         };
         
-      $("#register-user").hide();
-      $("#firebaseui-auth-container").hide();
-      $("#register-group").hide();
-      $("#register-start").show();
+      $j("#register-user").hide();
+      $j("#firebaseui-auth-container").hide();
+      $j("#register-group").hide();
+      $j("#register-start").show();
 
-      $('#register-start-join_group').css("font-size", "11px");
-      $('#register-start-join_group').css("margin-top", "10px");
+      $j('#register-start-join_group').css("font-size", "11px");
+      $j('#register-start-join_group').css("margin-top", "10px");
 
-      $('#register-start-new_group').css("font-size", "11px");
-      $('#register-start-new_group').css("margin-top", "10px");
+      $j('#register-start-new_group').css("font-size", "11px");
+      $j('#register-start-new_group').css("margin-top", "10px");
 
-      $("#register-start-new_group").click(function(){
-        $("#firebaseui-auth-container").show();
+      $j("#register-start-new_group").click(function(){
+        $j("#firebaseui-auth-container").show();
         window.user_state="new-group";
-        $("#register-start").hide();
+        $j("#register-start").hide();
       });
 
-      $("#signup-close").click(function(){
-        $("#register-user").hide();
-        $("#firebaseui-auth-container").hide();
-        $("#register-group").hide();
-        $("#register-start").show();
-        location.reload();
+      $j("#signup-close").click(function(){
+        $j("#register-user").hide();
+        $j("#firebaseui-auth-container").hide();
+        $j("#register-group").hide();
+        $j("#register-start").show();
+        //$j("#firebaseui-auth-container").children().remove();
+        ui.start('#firebaseui-auth-container', uiConfig);
       });
        
-      $("#register-group-btn").click(function(){
-        //check if group exist
-        //add group
-        $.post("register-grp.php",{"table": "membership_groups", "name": $("#grp-name").val(), "description": $("#grp-description").val()})
-        .done(function(dat){
-			    data = $.parseJSON(dat);
-          if(data){
-            alert("The group you selected already exists. You will be automaticaly added to this group");
-          }
-            
-			  });
-        setTimeout(function(){
-          getGroupID();
-        }, 100);
+      $j("#register-group-btn").click(function(){
+        var gName =$j.trim($j("#grp-name").val());
+        var gDes=$j.trim($j("#grp-description").val());
+        if(gName && gDes){ 
+          //check if group exist
+          //add group
+          $j(this).prop("disabled",true);
+          $j(this).text("loading...");
+          $j.post("register-grp.php",{"table": "membership_groups", "name": $j("#grp-name").val(), "description": $j("#grp-description").val()})
+          .done(function(dat){
+			      data = $j.parseJSON(dat);
+            if(data){
+
+            }
+
+			    });
+          setTimeout(function(){
+            getGroupID();
+          }, 100);
+        }else alert("all fields are requred");
       });
 
-      $("#register-start-join_group").click(function(){
-          $("#firebaseui-auth-container").show();
+      $j("#register-start-join_group").click(function(){
+          $j("#firebaseui-auth-container").show();
           window.user_state="join-group";
-          $("#register-start").hide();
+          $j("#register-start").hide();
       });
       
     });
 
     function prepGrp(name, id){
       set_groupID(id);
-      $("#register-user").show();
-      $("#register-group").hide();
-      if($("#groupID").val()!=id){
-           $("#groupID").prepend('<option value="'+id+'" class="">'+name+' *</option>');
-            $("#groupID").val(id);
+      $j("#register-user").show();
+      $j("#register-group").hide();
+      $j("#register-group-btn").prop("disabled",false);
+      $j("#register-group-btn").text("Next");
+      if($j("#groupID").val()!=id){
+           $j("#groupID").prepend('<option value="'+id+'" class="">'+name+' *</option>');
+            $j("#groupID").val(id);
       }
      
       
     }
 
     function getGroupID(){
-      $.post("register-grp.php",{"table": "membership_groups", "name": $("#grp-name").val(), "description": $("#grp-description").val()})
+      $j.post("register-grp.php",{"table": "membership_groups", "name": $j("#grp-name").val(), "description": $j("#grp-description").val()})
       .done(function(dat){
-			  data = $.parseJSON(dat);
+			  data = $j.parseJSON(dat);
         if(data[0].groupID>0){
-          prepGrp($("#grp-name").val(), data[0].groupID);
+          prepGrp($j("#grp-name").val(), data[0].groupID);
         }else if(data[0].groupID==null){
           setTimeout(function(){
             getGroupID();
