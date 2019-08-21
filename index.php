@@ -96,6 +96,39 @@
     height: 100%;
   }
 }
+
+/* Make the image fully responsive */
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .buttonx {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttonx {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.buttonx:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+  .regbutton{
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
  
 .modal-dialog {
     padding-top: 100px;
@@ -315,35 +348,97 @@ signInFailure: function(error) {
   </header>
 
   <section class="section-padding" id="about">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <div class="col-xs-12 col-md-10 col-md-offset-1">
-                    <div class="page-title text-center">
-                        <h1 class="display-4">ABOUT</h1>
-                        <p class="h6 font-italic">Let's make something great together.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                        <div class="card text-white">
-                            <div class="card-header bg-dark text-center">Vision</div>
-                            <div class="card-body" style="color: black;">
-                                <p class="card-text">To contest community in practical income generating.</p>
-                            </div>
-                        </div>
+        <!-- About heading -->
+  <div class="jumbotron text-center">
+    <h1 class="display-4">ABOUT</h1>
+    <p class="font-italic">Let's make something great together.</p>
+  </div>
 
-                        </div>
-                        <div class="col-sm-8">
-                        <div class="card text-white">
-                            <div class="card-header bg-dark text-center">Mission</div>
-                            <div class="card-body" style="color: black;">
-                                <p class="card-text">To be the best empowering management firm in the community on services to offer such as business management and advertisement.</p>
-                            </div>
-                        </div>
-                        </div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="mods/girlchild.png" alt="START TODAY" width="1366" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="mods/youth.png" alt="MAKE A DIFFERENCE" width="1366" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="mods/yeah.png" alt="BELIEVE" width="1366" height="400">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+    <!-- a very nice quote -->
+    <div class="jumbotron text-center">
+        <p style="font-size: 16px;">There is a powerful driving froce inside every human being that, once unleashed, can make any vision, dream or a desire a reality.</p>
+    </div>
+    <!-- some more data -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/boss.png" alt="What is VDM">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/whatwedo.png" alt="What is VDM">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/progress.png" alt="What is VDM">
+            </div>
+            <!-- register today -->
+            <div class="col-sm-12 text-center">
+                <div class="display-4" style="color: green; margin: 30px;">Register Today</div>
+            </div>
+             <!-- register button -->
+             <div class="col-sm-12 text-center">
+                <button class=" buttonx regbutton">Register</button>
+            </div>
+            <!-- our goal implemented using card -->
+            <div class="col-sm-12">
+                <div class="card text-white">
+                    <div class="card-header bg-dark text-center">Our Goal</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- our vision and mission -->
+            <!-- VISION -->
+            <div class="col-sm-4">
+                <div class="card text-white">
+                    <div class="card-header bg-danger text-center">Vision</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">To contest community in practical income generating.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MISSION -->
+            <div class="col-sm-8">
+                <div class="card text-white">
+                    <div class="card-header bg-danger text-center">Mission</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">To be the best empowering management firm in the community on services to offer such as business management and advertisement.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
     </section>
     <!-- Home-Area-End -->
     <!-- register -->
