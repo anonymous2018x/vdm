@@ -428,7 +428,7 @@ signInFailure: function(error) {
                     <div class="card-header bg-dark text-center">Our Goal</div>
                     <div class="card-body" style="color: black;">
                         <p class="card-text">
-                          VDM seaks to join people and groups that will earn them a living. Most people face challenges in management of finance and hence it increases the poverty level and hereby we came up with this programme of reducing poverty level. Investing on young entreprenuers whose ventures on their project proposals, will give them oppotunities on earning and self employment.
+                          VDM seeks to join people and groups that will earn them a living. Most people face challenges in management of finance and hence it increases the poverty level and hereby we came up with this programme of reducing poverty level. Investing on young entreprenuers whose ventures on their project proposals, will give them oppotunities on earning and self employment.
                         <p>
                     </div>
                 </div>
