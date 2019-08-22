@@ -18,7 +18,7 @@ switch ($usergroup) {
     </li>
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Proposals">
     <a class="nav-link" href="proposals_view.php">
-    <i class="fa fa-fw fa-whatsapp"></i>
+    <i class="fas fa-arrow-right"></i>
     <span class="nav-link-text">Proposals</span>
     </a>
     </li>';

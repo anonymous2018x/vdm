@@ -108,6 +108,39 @@
     height: 100%;
   }
 }
+
+/* Make the image fully responsive */
+.carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+  .buttonx {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.buttonx {
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.buttonx:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+  .regbutton{
+      background-color: white;
+      color: black;
+      border: 2px solid #4CAF50;
+      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
  
 .modal-dialog {
     margin-top: 100px;
@@ -291,6 +324,9 @@ signInFailure: function(error) {
             <a class="nav-link js-scroll-trigger" href="#home">Home</a>
           </li>
           <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#signin">Sign in</a>
           </li>
           <li class="nav-item">
@@ -318,13 +354,108 @@ signInFailure: function(error) {
                   </div>
                   <div class="space-20"></div>
                   <a href="#" class="badeInUp btn btn-sm btn-primary" data-wow-delay="0.8s" data-toggle="modal" data-target="#signup"><i class="lnr lnr-chevron-right"></i>Register</a>
-                <span class="h3">or </span> 
+                <span class="h5">or </span> 
               <a href="#signin" class="fadeInUp btn btn-sm btn-success">Sign in</a>
           </div>
       </div>
     </div>
   </header>
 
+  <section class="section-padding" id="about">
+        <!-- About heading -->
+  <div class="jumbotron text-center">
+    <h1 class="display-4">ABOUT US</h1>
+    <p class="font-italic">Let's make something great together.</p>
+  </div>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="mods/girlchild.png" alt="START TODAY" width="1366" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="mods/youth.png" alt="MAKE A DIFFERENCE" width="1366" height="400">
+    </div>
+    <div class="carousel-item">
+      <img src="mods/yeah.png" alt="BELIEVE" width="1366" height="400">
+    </div>
+  </div>
+  
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+    <!-- a very nice quote -->
+    <div class="jumbotron text-center">
+        <p style="font-size: 16px;">There is a powerful driving froce inside every human being that, once unleashed, can make any vision, dream or a desire a reality.</p>
+    </div>
+    <!-- some more data -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/boss.png" alt="What is VDM">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/whatwedo.png" alt="What is VDM">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-fluid" src="mods/progress.png" alt="What is VDM">
+            </div>
+            <!-- register today -->
+            <div class="col-sm-12 text-center">
+                <div class="display-4" style="color: green; margin: 30px;">Register Today</div>
+            </div>
+             <!-- register button -->
+             <div class="col-sm-12 text-center">
+                <button class=" buttonx regbutton">Register</button>
+            </div>
+            <!-- our goal implemented using card -->
+            <div class="col-sm-12">
+                <div class="card text-white">
+                    <div class="card-header bg-dark text-center">Our Goal</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">
+                          VDM seaks to join people and groups that will earn them a living. Most people face challenges in management of finance and hence it increases the poverty level and hereby we came up with this programme of reducing poverty level. Investing on young entreprenuers whose ventures on their project proposals, will give them oppotunities on earning and self employment.
+                        <p>
+                    </div>
+                </div>
+            </div>
+            <!-- our vision and mission -->
+            <!-- VISION -->
+            <div class="col-sm-4">
+                <div class="card text-white">
+                    <div class="card-header bg-danger text-center">Vision</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">To contest community in practical income generating.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- MISSION -->
+            <div class="col-sm-8">
+                <div class="card text-white">
+                    <div class="card-header bg-danger text-center">Mission</div>
+                    <div class="card-body" style="color: black;">
+                        <p class="card-text">To be the best empowering management firm in the community on services to offer such as business management and advertisement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </section>
     <!-- Home-Area-End -->
     <!-- register -->
     <?php include("register.php")?>
@@ -357,65 +488,99 @@ signInFailure: function(error) {
                         </div>
                     </div>
                 </div>
+                <!-- quick links -->
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <div class="box-icon">
-                                <span class="fa fa-map-marker h3"></span>
-                            </div>
-                            <p>Eldoret Kenya</p>
-                        </div>
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <div class="box-icon">
-                                <span class="fa fa-phone h3"></span>
-                            </div>
-                            <p>+254771019469 </p>
-                        </div>
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <div class="box-icon">
-                                <span class="fa fa-envelope h3"></span>
-                            </div>
-                            <p>
-                              reducepovertyclub@gmail.com
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- social media -->
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <a  href="#" class="box-icon">
-                                <i class="fab fa-facebook-f h3"></i>
-                                Facebook
-                            </a>
-                        </div>
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <a  href="https://twitter.com/ReduceClub" class="box-icon">
-                              <i class="fab fa-twitter h3"></i>
-                                Twitter
-                            </a>
-                        </div>
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="footer-box">
-                            <a  href="https://www.youtube.com/channel/UCWEzgdZ-_xbWUPqMU-sTpdA?view_as=subscriber" class="box-icon">
-                              <i class="fab fa-youtube h3"></i>
-                                Youtube
-                            </a>
-                        </div>
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
+                  <div class="col-sm-4">
+                      <div class="row">
+                          <div class="footer-box">
+                              <div class="box-icon">
+                                  <span class="fa fa-map-marker h3"></span>&nbsp;Eldoret Kenya
+                              </div>
+                              
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <div class="box-icon">
+                                  <span class="fa fa-phone h3"> </span>&nbsp;+254771019469
+                              </div>
+                           
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <div class="box-icon">
+                                  <span class="fa fa-envelope h3"></span>&nbsp;reducepovertyclub@gmail.com
+                              </div>
+                                
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- social media -->
+                  <div class="col-sm-4">
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="#" class="box-icon">
+                                  <i class="fab fa-facebook-f h3"></i>
+                                  Facebook
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="https://twitter.com/ReduceClub" class="box-icon">
+                                <i class="fab fa-twitter h3"></i>
+                                  Twitter
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="https://www.youtube.com/channel/UCWEzgdZ-_xbWUPqMU-sTpdA?view_as=subscriber" class="box-icon">
+                                <i class="fab fa-youtube h3"></i>
+                                  Youtube
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                  </div>
+
+                    <!-- social media -->
+                    <div class="col-sm-4">
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="#home" class="box-icon" style="color: green;">
+                              <i class="fas fa-home h3"></i>
+                                  Home
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="#about" class="box-icon" style="color: green;">
+                              <i class="fas fa-address-card h3"></i>
+                                  About us
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                      <div class="row">
+                          <div class="footer-box">
+                              <a  href="#signin" class="box-icon" style="color: green;">
+                              <i class="fas fa-user h3"></i>
+                                  Sign in
+                              </a>
+                          </div>
+                          <div class="space-30 hidden visible-xs"></div>
+                      </div>
+                  </div>
+                  
                 </div>
             </div>
         </div>
