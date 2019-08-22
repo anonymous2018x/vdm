@@ -16,12 +16,6 @@ switch ($usergroup) {
     <span class="nav-link-text">Categories</span>
     </a>
     </li>
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Assignments">
-    <a class="nav-link" href="assignments_view.php">
-    <i class="fa fa-fw fa-book"></i>
-    <span class="nav-link-text">Assignments</span>
-    </a>
-    </li>
     <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Proposals">
     <a class="nav-link" href="proposals_view.php">
     <i class="fa fa-fw fa-whatsapp"></i>
