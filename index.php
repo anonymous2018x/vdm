@@ -483,7 +483,7 @@ signInFailure: function(error) {
                     <div class="col-xs-12">
                         <div class="page-title text-center">
                             <h5 class="title">Contact US</h5>
-                            <h3 class="dark-color" style="color: green;">Find Us By Below Details</h3>
+                            <h3 class="dark-color" style="color: #00FF7F;">Find Us By Below Details</h3>
                             <div class="space-60"></div>
                         </div>
                     </div>
@@ -523,8 +523,8 @@ signInFailure: function(error) {
                   <div class="col-sm-4">
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="#" class="box-icon">
-                                  <i class="fab fa-facebook-f h3"></i>
+                              <a  href="#" class="box-icon" style="color: #FF0000;">
+                                  <i class="fab fa-facebook-f h3" ></i>
                                   Facebook
                               </a>
                           </div>
@@ -532,7 +532,7 @@ signInFailure: function(error) {
                       </div>
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="https://twitter.com/ReduceClub" class="box-icon">
+                              <a  href="https://twitter.com/ReduceClub" class="box-icon" style="color: #FF0000;">
                                 <i class="fab fa-twitter h3"></i>
                                   Twitter
                               </a>
@@ -541,7 +541,7 @@ signInFailure: function(error) {
                       </div>
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="https://www.youtube.com/channel/UCWEzgdZ-_xbWUPqMU-sTpdA?view_as=subscriber" class="box-icon">
+                              <a  href="https://www.youtube.com/channel/UCWEzgdZ-_xbWUPqMU-sTpdA?view_as=subscriber" class="box-icon" style="color: #FF0000;">
                                 <i class="fab fa-youtube h3"></i>
                                   Youtube
                               </a>
@@ -554,7 +554,7 @@ signInFailure: function(error) {
                     <div class="col-sm-4">
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="#home" class="box-icon" style="color: green;">
+                              <a  href="#home" class="box-icon" style="color: #00FF7F;">
                               <i class="fas fa-home h3"></i>
                                   Home
                               </a>
@@ -563,7 +563,7 @@ signInFailure: function(error) {
                       </div>
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="#about" class="box-icon" style="color: green;">
+                              <a  href="#about" class="box-icon" style="color: #00FF7F;">
                               <i class="fas fa-address-card h3"></i>
                                   About us
                               </a>
@@ -572,7 +572,7 @@ signInFailure: function(error) {
                       </div>
                       <div class="row">
                           <div class="footer-box">
-                              <a  href="#signin" class="box-icon" style="color: green;">
+                              <a  href="#signin" class="box-icon" style="color: #00FF7F;">
                               <i class="fas fa-user h3"></i>
                                   Sign in
                               </a>
@@ -588,24 +588,14 @@ signInFailure: function(error) {
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12 col-md-5">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            <span>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved  <i class="lnr lnr-heart" aria-hidden="true"></i> </a></span>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <div class="space-30 hidden visible-xs"></div>
-                    </div>
-                    <div class="col-xs-12 col-md-7">
-                        <div class="footer-menu">
-                            <ul>
-                                <!-- <li><a href="#">About</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Testimonial</a></li>
-                                <li><a href="#">Contacts</a></li> -->
-                            </ul>
-                        </div>
-                    </div>
+                   
+                    <br>
+                  <div class="col-sm-12 h5 text-center">
+
+                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+                   <i class="lnr lnr-heart" aria-hidden="true"></i> </a>
+                   </div>
+                       
                 </div>
             </div>
         </div>
